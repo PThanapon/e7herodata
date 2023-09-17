@@ -1,0 +1,300 @@
+,name,rarity,class,horoscope,attack,health,defense,crit chance,crit damage,effectiveness,effectiveness resistance,speed
+0,Abigail,5,Warrior,Aries,984,6266,637,15,150,0,0,117
+1,Achates,4,Soul Weaver,Gemini,603,4945,662,15,150,0,30,103
+2,Adin,3,Thief,Leo,1081,4572,494,23,150,0,0,111
+3,Adlay,3,Mage,Sagittarius,1039,3925,606,27,150,0,0,110
+4,Adventurer Ras,3,Knight,Libra,758,5826,672,15,150,0,12,101
+5,ae-GISELLE,5,Mage,Scorpio,1286,4733,652,23,160,0,0,103
+6,ae-KARINA,5,Knight,Aries,821,6751,648,15,150,18,0,110
+7,ae-NINGNING,5,Soul Weaver,Scorpio,785,5077,634,15,150,30,0,114
+8,ae-WINTER,5,Thief,Capricorn,1057,5542,532,15,150,30,0,118
+9,Ainos,3,Soul Weaver,Sagittarius,812,3925,599,15,150,12,18,107
+10,Ains,3,Warrior,Libra,951,5517,583,15,150,0,0,104
+11,Aither,3,Soul Weaver,Libra,712,4592,672,15,150,0,0,103
+12,Alencia,5,Warrior,Cancer,975,7054,652,15,150,0,0,106
+13,Alexa,3,Thief,Leo,1081,4572,494,23,150,0,0,111
+14,All-Rounder Wanda,3,Ranger,Gemini,1005,4693,532,15,150,18,0,109
+15,Ambitious Tywin,5,Knight,Sagittarius,894,6840,694,15,150,0,0,104
+16,Amid,5,Soul Weaver,Taurus,694,4855,655,15,150,0,30,117
+17,Angel of Light Angelica,4,Mage,Taurus,957,5016,645,15,150,18,18,112
+18,Angelic Montmorancy,3,Soul Weaver,Pisces,540,4900,729,15,150,0,12,98
+19,Angelica,4,Soul Weaver,Cancer,576,5700,743,15,150,0,0,98
+20,Apocalypse Ravi,5,Warrior,Cancer,975,7054,652,15,150,0,0,106
+21,Aramintha,5,Mage,Gemini,1197,4572,683,15,150,30,0,106
+22,Arbiter Vildred,5,Thief,Leo,1283,5138,522,23,150,0,0,116
+23,Archdemon's Shadow,5,Mage,Aquarius,1316,4777,715,15,150,18,0,108
+24,Architect Laika,5,Mage,Virgo,1306,4248,652,23,150,0,0,119
+25,Aria,5,Mage,Taurus,1039,5299,673,15,150,18,18,115
+26,Armin,4,Knight,Capricorn,721,6189,785,15,150,0,12,91
+27,Arowell,3,Knight,Libra,758,5826,672,15,150,0,12,95
+28,Arunka,5,Warrior,Scorpio,1570,6488,616,15,150,0,0,102
+29,Assassin Cartuja,4,Warrior,Scorpio,1119,6091,594,15,150,0,0,100
+30,Assassin Cidd,4,Thief,Aquarius,930,4774,497,35,150,0,0,128
+31,Assassin Coli,4,Thief,Taurus,1027,5299,469,15,150,0,0,126
+32,Astromancer Elena,5,Ranger,Libra,1079,5502,564,27,160,0,0,115
+33,Auxiliary Lots,4,Mage,Pisces,1021,4855,610,35,150,0,0,112
+34,Azalea,3,Warrior,Scorpio,1019,5738,571,15,150,0,0,98
+35,Baal and Sezan,5,Mage,Gemini,1197,4572,683,15,150,30,0,106
+36,Bad Cat Armin,4,Warrior,Aries,912,5871,614,15,150,0,0,115
+37,Baiken,5,Thief,Scorpio,1228,6266,473,23,150,0,0,113
+38,Basar,5,Mage,Aquarius,1316,4777,715,15,150,18,0,108
+39,Bask,3,Knight,Scorpio,842,6463,617,15,150,0,0,90
+40,Batisse,3,Warrior,Taurus,1039,5097,518,23,165,0,0,104
+41,Beehoo,5,Ranger,Capricorn,1203,5704,702,15,150,30,0,115
+42,Belian,5,Knight,Aries,821,6751,648,15,150,18,0,110
+43,Bellona,5,Ranger,Capricorn,1003,5704,585,15,150,30,0,115
+44,Benevolent Romann,4,Mage,Taurus,957,5016,645,15,150,18,18,112
+45,Benimaru,5,Warrior,Sagittarius,1177,5542,553,27,150,0,0,119
+46,Blaze Dingo,4,Soul Weaver,Sagittarius,885,4167,627,15,150,12,18,109
+47,Blood Blade Karin,4,Thief,Scorpio,1138,5871,462,23,150,0,0,111
+48,Blood Moon Haste,5,Soul Weaver,Pisces,621,5474,802,15,150,0,12,102
+49,Bomb Model Kanna,5,Ranger,Gemini,1182,5299,571,15,150,18,0,114
+50,Briar Witch Iseria,5,Ranger,Gemini,1182,5299,571,15,150,18,0,114
+51,Brieg,5,Knight,Aries,821,6751,648,15,150,18,0,114
+52,Butcher Corps Inquisitor,3,Knight,Leo,963,5138,606,23,150,0,0,95
+53,Camilla,3,Warrior,Virgo,885,4733,571,27,150,18,0,110
+54,Captain Rikoris,3,Warrior,Libra,951,5517,583,15,150,0,0,104
+55,Carmainerose,3,Mage,Aquarius,1168,3877,666,15,150,18,0,101
+56,Carrot,3,Mage,Sagittarius,1039,3925,606,27,150,0,0,110
+57,Cartuja,4,Warrior,Cancer,903,6635,630,15,150,0,0,103
+58,Cecilia,5,Knight,Aries,821,6751,648,15,150,18,0,110
+59,Celeste,3,Ranger,Sagittarius,929,4733,494,15,150,0,0,128
+60,Celestial Mercedes,4,Mage,Scorpio,1187,4491,627,27,160,0,0,101
+61,Celine,5,Thief,Scorpio,1228,6267,473,23,150,0,0,113
+62,Cerise,5,Ranger,Aquarius,970,5299,603,27,150,0,0,122
+63,Cermia,5,Warrior,Leo,1359,5542,585,23,150,0,0,105
+64,Challenger Dominiel,4,Mage,Scorpio,1187,4491,627,27,160,0,0,101
+65,Champion Zerato,4,Mage,Aries,1159,4733,627,27,150,18,0,104
+66,Chaos Inquisitor,3,Knight,Leo,963,5138,606,23,150,0,0,95
+67,Chaos Sect Axe,3,Warrior,Leo,1144,4895,543,23,150,0,0,101
+68,Charles,5,Knight,Gemini,957,6148,634,27,150,0,0,109
+69,Charlotte,5,Knight,Leo,1134,5825,662,23,150,0,0,99
+70,Chloe,5,Warrior,Sagittarius,1177,5542,553,27,150,0,0,119
+71,Choux,5,Warrior,Capricorn,966,7323,657,15,150,0,0,102
+72,Christy,3,Knight,Capricorn,667,5784,749,15,150,0,18,90
+73,Church of Ilryos Axe,3,Warrior,Leo,1144,4895,543,23,150,0,0,101
+74,Cidd,4,Thief,Aries,1029,5097,473,23,150,0,0,126
+75,Clarissa,4,Warrior,Leo,1252,5219,564,23,150,0,0,103
+76,Closer Charles,5,Thief,Scorpio,1228,6266,473,23,150,0,0,113
+77,Coli,4,Thief,Scorpio,1138,5871,462,23,150,0,0,111
+78,Command Model Laika,5,Ranger,Gemini,1182,5299,571,15,150,18,0,114
+79,Commander Lorina,3,Warrior,Leo,1144,4895,543,23,150,0,0,101
+80,Commander Pavel,5,Ranger,Taurus,1327,5138,582,23,150,0,0,109
+81,Conqueror Lilias,5,Warrior,Aquarius,885,6149,613,15,150,18,0,121
+82,Corvus,4,Warrior,Cancer,903,6635,630,15,150,0,0,103
+83,Crescent Moon Rin,4,Thief,Taurus,1027,5299,469,15,150,0,0,126
+84,Crimson Armin,4,Knight,Libra,821,6266,703,15,150,0,12,97
+85,Crozet,4,Knight,Cancer,739,6868,733,15,150,0,0,93
+86,Dark Corvus,5,Warrior,Capricorn,966,7323,657,15,150,0,0,102
+87,Death Dealer Ray,5,Soul Weaver,Cancer,621,6034,775,15,150,0,0,100
+88,Desert Jewel Basar,5,Soul Weaver,Sagittarius,957,4370,652,15,150,12,18,111
+89,Designer Lilibet,5,Warrior,Cancer,975,7054,652,15,150,0,0,106
+90,Destina,5,Soul Weaver,Cancer,621,6034,775,15,150,0,0,100
+91,Diene,5,Soul Weaver,Gemini,649,5254,694,15,150,0,30,105
+92,Dingo,4,Warrior,Virgo,957,5057,592,23,150,18,0,112
+93,Dizzy,5,Mage,Taurus,1039,5299,673,15,150,18,18,115
+94,Doll Maker Pearlhorizon,3,Mage,Taurus,921,4855,631,15,150,18,18,112
+95,Dominiel,4,Mage,Taurus,957,5016,645,15,150,6,18,112
+96,Doris,3,Soul Weaver,Cancer,540,5319,705,15,150,0,0,96
+97,Eaton,3,Knight,Cancer,685,7043,703,15,150,0,0,91
+98,Eda,5,Mage,Aries,1255,5016,652,27,150,18,0,106
+99,Edward Elric,5,Warrior,Aries,984,6266,637,15,150,0,0,117
+100,Elena,5,Soul Weaver,Gemini,649,5254,694,15,150,0,30,105
+101,Eligos,5,Ranger,Virgo,1283,4976,536,15,150,0,0,124
+102,Elphelt Valentine,5,Ranger,Capricorn,1003,5704,585,15,150,30,0,115
+103,Elson,3,Soul Weaver,Pisces,540,4900,729,15,150,0,12,98
+104,Emilia,5,Soul Weaver,Gemini,649,5254,694,15,150,0,30,105
+105,Enott,3,Warrior,Scorpio,1019,5738,571,15,150,0,0,98
+106,Ervalen,5,Thief,Scorpio,1228,6266,473,23,150,0,0,113
+107,Fairytale Tenebria,5,Mage,Taurus,1039,5299,673,15,150,18,18,115
+108,Faithless Lidica,5,Ranger,Gemini,1182,5299,571,15,150,18,0,114
+109,Falconer Kluri,3,Knight,Aries,703,5914,596,15,150,18,0,105
+110,Fallen Cecilia,5,Knight,Sagittarius,894,6840,694,15,150,0,0,104
+111,Fighter Maya,4,Knight,Libra,821,6266,703,15,150,0,12,97
+112,Flan,5,Ranger,Capricorn,1003,5704,585,15,150,30,0,115
+113,Free Spirit Tieria,4,Warrior,Virgo,957,5057,592,27,150,18,0,112
+114,Furious,4,Ranger,Leo,1068,5650,536,23,150,0,0,110
+115,General Purrgis,4,Warrior,Cancer,903,6635,630,15,150,0,0,103
+116,Glenn,3,Ranger,Libra,920,4855,525,27,160,0,0,110
+117,Gloomyrain,3,Mage,Cancer,1199,4491,613,23,150,0,0,107
+118,Godmother,3,Ranger,Gemini,1005,4693,532,15,150,18,0,109
+119,Great Chief Khawana,4,Warrior,Taurus,1138,5421,536,23,165,0,0,106
+120,Guider Aither,4,Mage,Cancer,1252,4612,627,15,150,0,0,107
+121,Gunther,3,Warrior,Libra,1426,5517,583,15,150,0,0,104
+122,Hasol,3,Knight,Sagittarius,758,6002,639,15,150,0,0,101
+123,Haste,5,Thief,Gemini,1089,5380,511,27,150,12,0,120
+124,Hataan,3,Thief,Leo,1081,4572,494,23,150,0,0,111
+125,Hazel,3,Soul Weaver,Aquarius,849,4450,662,15,150,0,0,101
+126,Helen,3,Knight,Cancer,685,6403,703,15,150,0,0,91
+127,Helga,3,Warrior,Sagittarius,1000,4895,518,23,150,0,0,114
+128,Holiday Yufine,5,Warrior,Libra,1119,6266,627,15,150,0,0,109
+129,Holy Flame Adin,3,Thief,Leo,1081,4572,494,23,150,0,0,111
+130,Hurado,3,Mage,Pisces,930,4572,585,35,150,0,0,111
+131,Hwayoung,5,Warrior,Libra,1510,6226,627,15,150,0,0,109
+132,Ian,3,Ranger,Virgo,1081,4450,504,15,150,0,0,118
+133,Ilynav,5,Knight,Gemini,957,6148,634,27,150,0,0,109
+134,Inferno Khawazu,4,Warrior,Scorpio,1119,6091,594,15,150,0,0,100
+135,Infinite Horizon Achates,4,Soul Weaver,Pisces,576,5165,767,15,150,0,12,100
+136,Iseria,5,Ranger,Leo,1158,6002,553,23,150,0,0,112
+137,Jack-O',5,Warrior,Taurus,1228,5784,553,23,165,0,0,109
+138,Januta,3,Warrior,Leo,1144,4895,543,23,150,0,0,101
+139,Jecht,3,Soul Weaver,Sagittarius,812,3925,599,15,150,12,18,107
+140,Jena,3,Mage,Aries,1063,4491,599,19,150,18,0,101
+141,Judge Kise,5,Warrior,Virgo,1039,5340,617,27,150,18,0,115
+142,Judith,3,Thief,Pisces,848,4289,494,27,150,18,0,117
+143,Juni,3,Warrior,Sagittarius,1000,4895,518,27,150,18,0,117
+144,Karin,4,Thief,Leo,1188,4855,508,23,150,0,0,113
+145,Kawerik,5,Mage,Virgo,1306,4248,652,23,150,0,0,119
+146,Kayron,5,Thief,Aries,1119,5340,483,23,150,0,0,129
+147,Ken,5,Warrior,Capricorn,966,7323,657,15,150,0,0,102
+148,Khawana,4,Thief,Pisces,957,4653,515,27,150,18,0,123
+149,Khawazu,4,Warrior,Scorpio,1119,6091,594,15,150,0,0,100
+150,Kikirat V2,3,Knight,Capricorn,667,5704,749,15,150,0,18,90
+151,Kiris,3,Ranger,Capricorn,857,5057,543,15,150,30,0,110
+152,Kise,5,Thief,Leo,1283,5138,522,23,150,0,0,116
+153,Kitty Clarissa,4,Warrior,Virgo,957,5057,592,27,150,18,0,112
+154,Kizuna AI,4,Soul Weaver,Cancer,576,5700,743,15,150,0,0,98
+155,Kluri,3,Knight,Aries,703,5914,596,15,150,18,0,105
+156,Krau,5,Knight,Pisces,839,6405,752,15,150,0,18,100
+157,Landy,5,Ranger,Leo,1158,6002,553,15,150,0,18,100
+158,Last Piece Karin,4,Thief,Aries,1029,5097,473,23,150,0,0,126
+159,Last Rider Krau,5,Knight,Pisces,839,6405,752,15,150,0,18,100
+160,Lena,3,Warrior,Libra,951,5517,583,15,150,0,0,104
+161,Leo,4,Ranger,Capricorn,930,5380,564,15,150,30,0,112
+162,Lethe,5,Warrior,Aquarius,885,6149,613,15,150,18,0,121
+163,Lidica,5,Ranger,Virgo,1283,4976,536,15,150,0,0,124
+164,Lilias,5,Knight,Aries,821,6751,648,15,150,18,0,110
+165,Lilibet,5,Warrior,Libra,1119,6266,627,15,150,0,0,109
+166,Lilka,3,Ranger,Gemini,1005,4693,532,15,150,0,0,109
+167,Lionheart Cermia,5,Warrior,Pisces,966,5663,668,15,150,0,30,112
+168,Little Queen Charlotte,5,Warrior,Libra,1119,6266,627,15,150,0,0,109
+169,Lone Crescent Bellona,5,Warrior,Scorpio,1208,6488,616,15,150,0,0,102
+170,Lorina,3,Warrior,Leo,1144,4895,543,23,150,0,0,101
+171,Lots,4,Soul Weaver,Gemini,603,4945,662,15,150,0,30,103
+172,Lua,5,Ranger,Pisces,993,6002,611,15,150,0,0,120
+173,Lucy,3,Soul Weaver,Virgo,558,4733,661,15,150,18,0,102
+174,Ludwig,5,Mage,Leo,1412,4248,645,15,150,0,0,112
+175,Luluca,5,Mage,Aquarius,1316,4777,715,15,150,18,0,108
+176,Luna,5,Warrior,Libra,1119,6266,627,15,150,0,0,109
+177,Magic Scholar Doris,3,Soul Weaver,Cancer,540,5319,705,15,150,0,0,96
+178,Maid Chloe,5,Soul Weaver,Virgo,640,5340,720,15,150,12,0,106
+179,Martial Artist Ken,5,Warrior,Leo,1359,5542,585,23,150,0,0,105
+180,Mascot Hazel,3,Soul Weaver,Aquarius,849,4450,662,15,150,0,0,111
+181,Maya,4,Knight,Aries,821,6796,648,15,150,18,0,112
+182,Mediator Kawerik,5,Warrior,Capricorn,966,7323,657,15,150,0,0,102
+183,Melany,3,Warrior,Libra,951,5517,583,15,150,0,0,104
+184,Melissa,5,Mage,Leo,1412,4248,645,15,150,0,0,112
+185,Mercedes,4,Mage,Scorpio,1187,4491,627,27,160,0,0,101
+186,Mercenary Helga,3,Warrior,Sagittarius,1000,4895,518,23,150,0,0,114
+187,Milim,5,Mage,Cancer,1359,4895,652,23,150,0,0,110
+188,Mirsa,3,Thief,Pisces,885,4410,501,27,150,18,0,120
+189,Mistychain,3,Mage,Leo,1244,3925,606,15,150,0,0,109
+190,Montmorancy,3,Soul Weaver,Pisces,540,4900,729,15,150,0,12,98
+191,Moon Bunny Dominiel,4,Soul Weaver,Taurus,649,4572,631,15,150,0,30,114
+192,Mort,5,Knight,Gemini,957,6148,634,27,150,0,0,109
+193,Mucacha,3,Warrior,Sagittarius,1000,4895,518,27,150,0,0,114
+194,Mui,5,Warrior,Virgo,1039,5340,617,27,150,18,0,115
+195,Muse Rima,3,Ranger,Aquarius,822,4693,561,27,150,0,0,117
+196,Muwi,3,Thief,Scorpio,1039,5517,452,23,150,0,0,108
+197,Navy Captain Landy,5,Knight,Leo,1134,5825,662,23,150,0,0,99
+198,Nemunas,3,Ranger,Libra,920,4855,525,27,150,0,0,110
+199,Ocean Breeze Luluca,5,Soul Weaver,Gemini,649,5254,694,15,150,0,30,105
+200,Operator Sigret,5,Ranger,Libra,1079,5502,564,27,160,0,0,115
+201,Orte,3,Thief,Aquarius,857,4531,483,35,150,0,0,125
+202,Otillie,3,Mage,Taurus,885,4693,617,15,150,18,18,110
+203,Pavel,5,Ranger,Virgo,1283,4976,536,15,150,0,0,124
+204,Peacemaker Furious,4,Ranger,Scorpio,970,5935,557,15,150,0,0,124
+205,Pearlhorizon,3,Mage,Taurus,921,4855,631,15,150,6,18,112
+206,Peira,5,Thief,Virgo,1075,5562,487,15,150,18,0,128
+207,Penelope,3,Thief,Scorpio,1039,5517,452,23,150,0,0,108
+208,Pirate Captain Flan,5,Ranger,Gemini,1182,5299,571,15,150,18,0,114
+209,Politis,5,Mage,Gemini,1197,4572,683,15,150,30,0,106
+210,Purrgis,4,Warrior,Scorpio,1119,6091,594,15,150,0,0,100
+211,Pyllis,3,Knight,Cancer,685,6403,703,15,150,0,0,91
+212,Ram,5,Mage,Gemini,1556,4572,683,15,150,30,0,106
+213,Ran,5,Thief,Aries,1119,5380,483,23,150,0,0,129
+214,Ras,3,Knight,Libra,758,5826,672,15,150,0,12,95
+215,Ravi,5,Warrior,Capricorn,966,7323,657,15,150,0,0,102
+216,Ray,5,Soul Weaver,Taurus,694,4855,655,15,150,0,30,117
+217,Rem,5,Warrior,Scorpio,1208,6488,616,15,150,0,0,102
+218,Remnant Violet,5,Thief,Leo,1283,5138,522,23,150,0,0,116
+219,Requiem Roana,5,Mage,Aquarius,1316,4777,715,15,150,18,0,108
+220,Requiemroar,3,Soul Weaver,Sagittarius,848,4046,613,15,150,12,18,106
+221,Researcher Carrot,3,Mage,Sagittarius,1039,3925,606,27,150,0,0,110
+222,Righteous Thief Roozid,3,Thief,Gemini,812,4370,462,27,150,12,0,114
+223,Rikoris,3,Warrior,Libra,951,5517,583,15,150,0,0,104
+224,Rima,3,Ranger,Aquarius,822,4693,561,27,150,0,0,117
+225,Rimuru,5,Warrior,Libra,1119,6266,627,15,150,0,0,109
+226,Rin,4,Soul Weaver,Virgo,594,5057,691,15,150,18,0,104
+227,Riza Hawkeye,5,Ranger,Capricorn,1003,5704,585,15,150,30,0,115
+228,Roaming Warrior Leo,4,Ranger,Gemini,1088,5016,553,15,150,18,0,111
+229,Roana,5,Soul Weaver,Pisces,621,5474,802,15,150,0,12,102
+230,Romann,4,Mage,Gemini,1109,4329,655,15,150,30,0,105
+231,Roozid,3,Thief,Gemini,812,4370,462,19,150,12,12,106
+232,Rose,4,Knight,Libra,821,6266,703,15,150,0,12,97
+233,Roy Mustang,5,Mage,Leo,1412,4248,645,15,150,0,0,112
+234,Ruele of Light,5,Soul Weaver,Pisces,621,5474,802,15,150,0,12,102
+235,Sage Baal and Sezan,5,Mage,Taurus,1039,5299,673,15,150,18,18,115
+236,Savior Adin,3,Thief,Leo,1081,4572,494,15,150,18,18,115
+237,Schuri,4,Ranger,Leo,1068,5650,536,23,150,0,0,110
+238,Seaside Bellona,5,Ranger,Gemini,1182,5299,571,15,150,18,0,114
+239,Senya,5,Knight,Taurus,1445,6321,645,15,150,0,0,100
+240,Serene Purity Adin,3,Thief,Leo,1081,4572,494,15,150,0,0,100
+241,Serila,4,Mage,Aquarius,1218,4521,683,15,150,18,0,106
+242,Sez,5,Thief,Scorpio,1228,6266,473,23,150,0,0,113
+243,Shadow Knight Pyllis,3,Knight,Cancer,685,6403,703,15,150,0,0,91
+244,Shadow Rose,4,Knight,Gemini,889,5784,610,23,150,0,0,107
+245,Sharun,5,Soul Weaver,Virgo,640,5340,720,15,150,18,0,106
+246,Shepherd Jena,3,Mage,Aries,1063,4491,599,15,150,18,0,106
+247,Shooting Star Achates,4,Soul Weaver,Cancer,576,5700,743,15,150,0,0,98
+248,Shuna,5,Soul Weaver,Gemini,649,5254,694,15,150,0,30,105
+249,Sigret,5,Warrior,Taurus,1228,5784,553,23,165,0,0,109
+250,Silk,4,Ranger,Virgo,1188,4693,518,15,150,0,0,121
+251,Silver Blade Aramintha,5,Mage,Gemini,1197,4572,683,15,150,30,0,106
+252,Sinful Angelica,4,Soul Weaver,Taurus,649,4572,631,15,150,0,30,114
+253,Sol Badguy,5,Warrior,Sagittarius,1177,5542,553,27,150,0,0,119
+254,Solitaria of the Snow,5,Mage,Taurus,1039,5299,673,15,150,18,18,115
+255,Sonia,3,Soul Weaver,Pisces,540,4900,729,15,150,0,12,98
+256,Specimen Sez,5,Thief,Scorpio,1228,6266,473,23,150,0,0,113
+257,Specter Tenebria,5,Mage,Gemini,1197,4572,683,15,150,30,0,106
+258,Spirit Eye Celine,5,Thief,Sagittarius,1158,5016,532,27,150,0,0,122
+259,Straze,5,Warrior,Taurus,1228,5784,553,23,165,0,0,109
+260,Summer Break Charlotte,5,Knight,Gemini,957,6148,634,27,150,0,0,109
+261,Summer&#8217;s Disciple Alexa,3,Thief,Leo,1081,4572,494,23,150,0,0,111
+262,Summertime Iseria,5,Ranger,Capricorn,1354,5704,585,15,150,30,0,115
+263,Surin,4,Thief,Gemini,1010,5097,497,23,150,12,0,117
+264,Suthan,3,Mage,Aquarius,1119,4263,652,23,150,12,0,117
+265,Sven,3,Thief,Scorpio,1039,5517,452,23,150,0,0,108
+266,Sylvan Sage Vivian,5,Mage,Cancer,1359,4895,652,23,150,0,0,110
+267,Taeyou,5,Warrior,Virgo,1039,5340,617,23,150,12,0,115
+268,Talaz,3,Warrior,Leo,1144,4895,543,23,150,12,0,115
+269,Talia,3,Thief,Capricorn,903,4895,501,23,150,12,0,115
+270,Tamarinne,5,Soul Weaver,Sagittarius,957,4370,652,15,150,12,18,111
+271,Taranor Guard,3,Warrior,Libra,951,5517,583,15,150,0,0,104
+272,Taranor Royal Guard,3,Knight,Scorpio,682,6463,617,15,150,0,0,90
+273,Tempest Surin,4,Thief,Gemini,1010,5097,497,27,150,12,0,117
+274,Tenebria,5,Mage,Cancer,1359,4895,652,23,150,0,0,110
+275,Tieria,3,Warrior,Aries,839,5517,591,15,150,0,0,100
+276,Top Model Luluca,5,Mage,Sagittarius,1228,4370,662,27,150,0,0,115
+277,Troublemaker Crozet,4,Knight,Pisces,776,6021,718,15,150,0,18,98
+278,Twisted Eidolon Kayron,5,Thief,Scorpio,1228,6266,473,23,150,0,0,113
+279,Tywin,5,Knight,Aries,821,6751,648,15,150,18,0,110
+280,Unbound Knight Arowell,3,Knight,Libra,758,5826,672,15,150,18,0,110
+281,Verdant Adin,3,Thief,Leo,1081,4572,494,23,150,0,0,111
+282,Veronica,4,Ranger,Virgo,1188,4693,518,15,150,0,0,121
+283,Vigilante Leader Glenn,3,Ranger,Libra,920,4855,525,27,160,0,0,110
+284,Vildred,5,Thief,Leo,1283,5138,522,23,150,0,0,116
+285,Violet,5,Thief,Scorpio,1228,6266,473,23,150,0,0,113
+286,Vivian,5,Mage,Sagittarius,1228,4378,662,27,150,0,0,115
+287,Wanda,3,Ranger,Gemini,1005,4693,532,15,150,18,0,109
+288,Wanderer Silk,4,Ranger,Capricorn,930,5380,564,15,150,30,0,112
+289,Watcher Schuri,4,Ranger,Scorpio,970,5935,557,27,150,0,0,106
+290,Yoonryoung,3,Knight,Aries,703,5914,596,15,150,18,0,105
+291,Yufine,5,Warrior,Taurus,1228,5784,553,23,165,0,0,109
+292,Yulha,5,Knight,Sagittarius,894,6840,694,15,150,0,0,104
+293,Yuna,5,Ranger,Leo,1158,6002,553,23,150,0,0,112
+294,Zahhak,5,Warrior,Sagittarius,1177,5542,553,27,150,0,0,119
+295,Zealot Carmainerose,3,Mage,Aquarius,1168,3877,666,15,150,18,0,101
+296,Zeno,5,Mage,Taurus,1039,5299,673,15,150,18,18,115
+297,Zerato,4,Mage,Aries,1159,4733,627,27,150,18,0,104
+298,Zio,5,Mage,Aries,1255,5016,652,27,150,18,0,104
