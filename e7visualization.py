@@ -43,7 +43,7 @@ for filt in filters:
 
             print(stat, filt, fil)
 
-            plt.plot(perc, stats[stat][i+1][stat].values, colour[i], label = f"{filt}: {filters[filt][i]}")
+            plt.plot(perc, stats[stat][i+1][stat].values, colour[i], label = f"{filters[filt][i]}")
 
         plt.title(f"{stat} by {filt}")
         plt.xlabel("percentile")
