@@ -38,11 +38,7 @@ for filt in filters:
             for v in range(len(temp)):
                 perc.append(v*100/len(temp))
 
-
             stats[stat].append(temp)
-
-            print(stat, filt, fil)
-
             plt.plot(perc, stats[stat][i+1][stat].values, colour[i], label = f"{filters[filt][i]}")
 
         plt.title(f"{stat} by {filt}")
