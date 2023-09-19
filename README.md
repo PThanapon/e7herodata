@@ -1,4 +1,4 @@
-<h1>Welcome to E7 Hero Data!<h1/>
+<h2>Welcome to E7 Hero Data!<h2/>
 A project where I analysed the base stat of heroes from Epic Seven.
 
 <h4>Background Information<h4/>
