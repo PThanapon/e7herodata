@@ -1,7 +1,7 @@
-<h5>Welcome to E7 Hero Data!<h5/>
+<h3>Welcome to E7 Hero Data!<h3/>
 A project where I analysed the base stat of heroes from Epic Seven.
 
-<h2>Background Information<h2/>
+<h4>Background Information<h4/>
 
 Epic Seven is a mobile turn-based strategy role playing game.
 
