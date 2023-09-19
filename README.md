@@ -2,7 +2,7 @@
   
 A project where I collect and analysed the base stat of heroes from Epic Seven.
 
-<h3>Background Information**<h3/>
+<h3>Background Information<h3/>
 
 <p>Epic Seven is a mobile turn-based strategy role playing game.<p/>
 
