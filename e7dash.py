@@ -1,5 +1,3 @@
-#Dash app code and comments written 100% by ChatGPT
-
 # Import necessary libraries
 import dash
 from dash import dcc
@@ -290,8 +288,4 @@ def store_filter_and_stat(selected_filter, selected_stat):
         # When 'All' is selected, store 'all-correlation' in the data
         return 'all-correlation'
     return f'{selected_filter}-{selected_stat}'  # Store the selected filter and statistic
-
-# Run the Dash app
-if __name__ == '__main__':
-    app.run_server()  # Start the Dash web application
 
