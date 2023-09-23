@@ -6,6 +6,8 @@
 
 For some context, Epic Seven is a turn-based strategy game developed by a Korean game company Smilegate. In a fight, heroes take turns to use their ability to deal damage, heal or provide utility such as buffing allies and debuffing enemies. Each heroes would have a rarity from 1 to 5 Stars; though 1 and 2 stars heroes are rarely use in a fight but rather as fodders to upgrade other heroes so I have omitted them from this project. Together with Class and Horoscope, the base stats of a hero could be determined; with some exceptions such as Summertime Iseria having a 30% atk increase from her Passive skills. This project aims to display the relationships between each of the factors and explores how each stats relate to one anothers.
 
+## The Process 
+
 ## Part 1: Data Extraction (e7xscrape.py)
 
 The project begins with the script `e7xscrape.py`, which serves as the foundation for gathering character data. Here's a summary of its role in the project and its associated code:
@@ -23,19 +25,31 @@ import re
 import pandas as pd
 ```
 
-- **Web Scraping**: The script uses web scraping techniques to access character information from the website "https://epic7x.com/characters/."
+- **Web Scraping**: The script uses `urllib` library to access character information from the website "https://epic7x.com/characters/."
 
 ```
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
-
 url = "https://epic7x.com/characters/"
 request_site = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
 html = urllib.request.urlopen(request_site, context=ctx).read()
 ```
 
-- **Data Parsing**: With the help of the `BeautifulSoup` library, it parses the HTML content of the website to locate a specific script tag containing character data in JSON format.
+- **Data Parsing**: With the help of the `BeautifulSoup` library, I parses the HTML content of the website to locate a specific script tag containing the hero data in JSON format, in this case, it is in the 9th script tags. As the data is stored in the form of Javascripts array with an object for each characters, I sliced the string (obtained from `BeautifulSoup`) into just the array and use Regex (`re`) to match each Javascript object, hence the non-greediness.
+```
+tags = soup("script")
+counter = 0
+for tag in tags:
+    if counter == 8:
+        new_tag = f'{tag}'
+        break
+    counter += 1
+
+cleaned = new_tag[152:106439].rstrip()
+result = re.findall("\{.*?\}", cleaned)
+```
+
+![](https://media.discordapp.net/attachments/844184695754457122/1155085988952023050/image.png?width=1666&height=993 "Here's how the arrary look like")
+
+<center> Here's how the array look like </center>
 
 - **Data Extraction**: Character attributes such as name, link, rarity, class, horoscope, attack, health, defense, and speed are extracted from the JSON data.
 
