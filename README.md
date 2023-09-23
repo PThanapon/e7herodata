@@ -12,7 +12,7 @@ For some context, Epic Seven is a turn-based strategy game developed by a Korean
 
 ## The Process 
 
-## Part 1: Data Extraction (e7xscrape.py)
+## Part 1: Data Extraction ([e7xscrape.py](https://github.com/pthanapon/e7herodata/blob/main/e7xscrape.py))
 
 The project begins with the script `e7xscrape.py`, which serves as the foundation for gathering character data. Here's a summary of its role in the project and its associated code:
 
@@ -169,7 +169,7 @@ df = pd.DataFrame(new_dict)
 df.to_csv(f"e7HeroData.csv")
 ```
 
-## Part 2: Data Visualization (e7visualization.py)
+## Part 2: Data Visualization ([e7visualization.py](https://github.com/pthanapon/e7herodata/blob/main/e7visualization.py))
 
 In this section, we delve into the script `e7visualization.py`, which is dedicated to the visual representation of character data. Here's an outline of its role:
 
@@ -191,7 +191,7 @@ In this section, we delve into the script `e7visualization.py`, which is dedicat
 
 - **Exploratory Analysis**: This script is designed for exploratory data analysis, enabling users to comprehend the distribution of character statistics within the game. It utilizes the Matplotlib library for visualization.
 
-## Part 3: Additional Data Analysis (e7supplementary.py)
+## Part 3: Additional Data Analysis ([e7supplementary.py](https://github.com/pthanapon/e7herodata/blob/main/e7supplementary.py))
 
 This section introduces the script `e7supplementary.py`, which enhances the project with additional data analysis. Here's an overview of its role, distinguishing it from Part 2:
 
@@ -215,7 +215,7 @@ Unlike Part 2, which utilizes Matplotlib for visualization, Part 3 employs the S
 
 Together, these sections offer a comprehensive approach to character data analysis, allowing users to explore character statistics from different perspectives and gain valuable insights into the game's characters.
 
-## Part 4: Interactive Web Dashboard (e7dash.py)
+## Part 4: Interactive Web Dashboard ([e7dash.py](https://github.com/pthanapon/e7herodata/blob/main/e7dash.py))
 
 The final component of the "E7 Hero Data" project is the interactive web dashboard created using the script `e7dash.py`. This part ties everything together:
 
