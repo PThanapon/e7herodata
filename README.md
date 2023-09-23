@@ -18,13 +18,8 @@ The project begins with the script `e7xscrape.py`, which serves as the foundatio
 
 Firstly, I import the necessary modules
 ```
-import collections.abc
-collections.Callable = collections.abc.Callable
-
-import urllib.parse, urllib.error, urllib.request
+import urllib.request
 from bs4 import BeautifulSoup
-import ssl
-import json
 import re
 import pandas as pd
 ```
