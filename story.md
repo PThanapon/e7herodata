@@ -34,7 +34,7 @@ In the heart of this epic saga, "e7visualization.py" emerges as a powerful tool 
 
 - **Visual Spellcasting**: The script weaves visual spells in the form of mesmerizing line plots, revealing how character statistics dance across the different categories.
 
-- **Plot Preservation**: Each plot, an artistic masterpiece, is meticulously preserved as a PDF file, immortalizing the essence of character statistics.
+- **Plot Preservation**: Each plot, an artistic masterpiece, is meticulously preserved as PNG and PDF file, immortalizing the essence of character statistics.
 
 - **Exploratory Revelations**: The script stands as a beacon for exploratory data analysis, guiding users on a quest to uncover the secrets of character statistics.
 
