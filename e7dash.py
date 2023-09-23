@@ -289,3 +289,6 @@ def store_filter_and_stat(selected_filter, selected_stat):
         return 'all-correlation'
     return f'{selected_filter}-{selected_stat}'  # Store the selected filter and statistic
 
+if __name__ == "__main__":
+    app.run_server()
+
