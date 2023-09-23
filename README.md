@@ -8,7 +8,7 @@ For some context, Epic Seven is a turn-based strategy game developed by a Korean
 
 ## Part 1: Data Extraction (e7xscrape.py)
 
-The project begins with the script `e7xscrape.py`, which serves as the foundation for gathering character data. Here's a summary of its role in the project:
+The project begins with the script `e7xscrape.py`, which serves as the foundation for gathering character data. Here's a summary of its role in the project and its associated code:
 
 Firstly, I import the necessary modules
 ```
