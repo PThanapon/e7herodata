@@ -1,16 +1,11 @@
-# Import necessary libraries
 import dash
 from dash import dcc
 from dash import html
-from dash.dependencies import Input, Output, State
-import plotly.express as px
-import pandas as pd
+from dash.dependencies import Input, Output
 import base64
 
-# Create a Dash web application
 app = dash.Dash(__name__)
 
-# Define the layout of the dashboard
 app.layout = html.Div([
     # Navigation and header
     
@@ -32,7 +27,7 @@ app.layout = html.Div([
     
     # Header for the dashboard
     html.H1(
-        "Character Data Dashboard", 
+        "E7 Hero Data Dashboard", 
         style={
             'textAlign': 'center',  # Center-align text
             'color': 'navy',  # Text color
@@ -92,8 +87,9 @@ app.layout = html.Div([
                 style={'width': '100%'}  # Set the width of the image to 100%
             ),
         ], style={
-            'width': '50%',  # Set the width of the left div
-            'float': 'left'  # Float div to the left for side-by-side display
+            'width': '50%',  # Set the width of the left div to 50%
+            'display': 'flex',  # Use flexbox for centering
+            'justify-content': 'flex-end'  # Align the right edge to the center
         }),
         
         # Comment display on the right
@@ -107,8 +103,10 @@ app.layout = html.Div([
                 style={'white-space': 'pre-wrap'}  # Preserve line breaks in text
             )
         ], style={
-            'width': '50%',  # Set the width of the right div
-            'float': 'right'  # Float div to the right for side-by-side display
+            'width': '50%',  # Set the width of the right div to 50%
+            'display': 'flex',  # Use flexbox for centering
+            'justify-content': 'flex-start',  # Align the content to the left
+            'flex-direction': 'column'  # Display content in a column layout
         }),
     ], style={
         'display': 'flex'  # Use flexbox for side-by-side display of image and comment
@@ -195,7 +193,7 @@ app.clientside_callback(
     function(clicks) {
         if (clicks > 0) {
             var aboutSection = document.getElementById('about-section');
-            aboutSection.scrollIntoView({ behavior: 'smooth', block': 'start' });
+            aboutSection.scrollIntoView({ behavior: 'smooth', 'block': 'start' });
         }
         return clicks;
     }
@@ -208,10 +206,12 @@ app.clientside_callback(
 # Callback to update character image and comment
 
 # Define a callback to update the character image, comment, and download link
+# Callback to update character image and comment
 @app.callback(
     [Output('character-image', 'src'),  # Output to update the image source
      Output('character-comment', 'children'),  # Output to update the comment content
-     Output('download-link', 'href')],  # Output to update the download link
+     Output('download-link', 'href'),  # Output to update the download link
+     Output('character-image', 'style')],  # Output to update the image style
     [Input('filter-dropdown', 'value'),  # Input for selected filter
      Input('stat-dropdown', 'value'),  # Input for selected statistic
      Input('filter-and-stat', 'data')]  # Input for filter and statistic data from the Store
@@ -220,32 +220,56 @@ def update_image(selected_filter, selected_stat, filter_and_stat_data):
     if filter_and_stat_data is not None:
         selected_filter, selected_stat = filter_and_stat_data.split('-')
 
-    # Read and encode the character image file as base64
-    with open(f'plots/png/{selected_stat}-{selected_filter}.png', 'rb') as f:
-        image_binary = base64.b64encode(f.read()).decode('utf-8')
+    if selected_filter == 'all':
+        # When "All" is selected, display the default graph (e.g., "attack_averages.png")
+        if selected_stat == "correlation":
+            with open('plots/png/correlation.png', 'rb') as f:
+                image_binary = base64.b64encode(f.read()).decode('utf-8')
 
-    # Define the file name for the character comment
-    comment_filename = f'comments/{selected_stat}-{selected_filter}-comment.txt'
+            comment_filename = f'comments/correlation-comment.txt'
+            image_style = {'width': '85%'}
+        else:
+            with open(f'plots/png/{selected_stat}_averages.png', 'rb') as f:
+                image_binary = base64.b64encode(f.read()).decode('utf-8')
 
-    try:
-        # Try to open and read the character comment from a text file
-        with open(comment_filename, 'r') as comment_file:
-            comment = comment_file.read()
-    except:
-        # Handle the case where the comment file cannot be found
-        comment = "Comment cannot be found"
+            comment_filename = f'comments/{selected_stat}-averages-comment.txt'
+            image_style = {'width': '50%'}
+        try:
+            with open(comment_filename, 'r') as comment_file:
+                comment = comment_file.read()
+        except:
+            comment = "Comment cannot be found"
 
-    # Define the download link for the character image
-    download_link = f'data:image/png;base64,{image_binary}'
+        download_link = f'data:image/png;base64,{image_binary}'
 
-    # Return updated image source, comment content, and download link
+        # Set the image style for 50% width using CSS
+    else:
+        # When other filters are selected, display the corresponding graph
+        with open(f'plots/png/{selected_stat}-{selected_filter}.png', 'rb') as f:
+            image_binary = base64.b64encode(f.read()).decode('utf-8')
+
+        comment_filename = f'comments/{selected_stat}-{selected_filter}-comment.txt'
+
+        try:
+            with open(comment_filename, 'r') as comment_file:
+                comment = comment_file.read()
+        except:
+            comment = "Comment cannot be found"
+
+        download_link = f'data:image/png;base64,{image_binary}'
+
+        # Reset the image style (remove the width property)
+        image_style = {'width': '105%'}
+
     return (
-        f'data:image/png;base64,{image_binary}',  # Update the image source
-        comment,  # Update the comment content
-        download_link  # Update the download link
+        f'data:image/png;base64,{image_binary}',
+        comment,
+        download_link,
+        image_style  # Pass the image style to the output
     )
 
-# Callback to update stat dropdown options and value based on the filter dropdown
+
+# Callback to store the selected filter and stat when 'All' is selected
 
 # Define a callback to update the statistic dropdown options and value based on the filter selection
 @app.callback(
@@ -255,11 +279,7 @@ def update_image(selected_filter, selected_stat, filter_and_stat_data):
 )
 def update_stat_dropdown(selected_filter):
     if selected_filter == 'all':
-        # When 'All' is selected, show 'Correlation' as the only statistic option
-        stat_options = [{'label': 'Correlation', 'value': 'correlation'}]
-        selected_stat = 'correlation'  # Set the selected statistic to 'Correlation'
-    else:
-        # When a specific filter is selected, show multiple statistic options
+        # When 'All' is selected, show 'Correlation' plus all eight stat options
         stat_options = [
             {'label': 'Attack', 'value': 'attack'},
             {'label': 'Health', 'value': 'health'},
@@ -269,26 +289,25 @@ def update_stat_dropdown(selected_filter):
             {'label': 'Effectiveness', 'value': 'effectiveness'},
             {'label': 'Effectiveness Resistance', 'value': 'effectiveness resistance'},
             {'label': 'Speed', 'value': 'speed'},
+            {'label': 'Correlation', 'value': 'correlation'}  # Add 'Correlation' option
         ]
-        selected_stat = 'attack'  # Set the selected statistic to 'Attack'
+        selected_stat = 'correlation'  # Set the selected statistic to 'Correlation'
+    else:
+        # When a specific filter is selected, show only the eight stat options
+        stat_options = [
+            {'label': 'Attack', 'value': 'attack'},
+            {'label': 'Health', 'value': 'health'},
+            {'label': 'Defense', 'value': 'defense'},
+            {'label': 'Crit Chance', 'value': 'crit chance'},
+            {'label': 'Crit Damage', 'value': 'crit damage'},
+            {'label': 'Effectiveness', 'value': 'effectiveness'},
+            {'label': 'Effectiveness Resistance', 'value': 'effectiveness resistance'},
+            {'label': 'Speed', 'value': 'speed'}
+        ]
+        selected_stat = 'attack'  # Set the selected statistic to 'Attack' as default
 
     # Return updated dropdown options and selected value
     return stat_options, selected_stat
 
-# Callback to store the selected filter and stat when 'All' is selected
-
-# Define a callback to store the selected filter and statistic in the Store component when 'All' is selected
-@app.callback(
-    Output('filter-and-stat', 'data'),  # Output to update the data in the Store
-    [Input('filter-dropdown', 'value'),  # Input for the selected filter
-     Input('stat-dropdown', 'value')]  # Input for the selected statistic
-)
-def store_filter_and_stat(selected_filter, selected_stat):
-    if selected_filter == 'all':
-        # When 'All' is selected, store 'all-correlation' in the data
-        return 'all-correlation'
-    return f'{selected_filter}-{selected_stat}'  # Store the selected filter and statistic
-
 if __name__ == "__main__":
-    app.run_server()
-
+    app.run_server(debug = True)

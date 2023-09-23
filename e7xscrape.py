@@ -14,8 +14,8 @@ ctx.verify_mode = ssl.CERT_NONE
 
 url = "https://epic7x.com/characters/"
 request_site = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-
 html = urllib.request.urlopen(request_site, context=ctx).read()
+
 soup = BeautifulSoup(html, "html.parser")
 
 tags = soup("script")
