@@ -49,15 +49,121 @@ result = re.findall("\{.*?\}", cleaned)
 
 ![](https://media.discordapp.net/attachments/844184695754457122/1155085988952023050/image.png?width=1666&height=993 "Here's how the arrary look like")
 
-<center> Here's how the array look like </center>
+<div align="center"> Here's how the array look like </div>
 
-- **Data Extraction**: Character attributes such as name, link, rarity, class, horoscope, attack, health, defense, and speed are extracted from the JSON data.
+&nbsp;
 
-- **Additional Statistics**: Individual HTTP requests to character-specific URLs are made to retrieve further character statistics.
+- **Data Extraction**: Character attributes such as name, link, rarity, class, horoscope, attack, health, defense, and speed are extracted from the string. The names are stored as the keys in the dictionary which itself containes a dictionary with 2 keys; "link" and "info". The link stored will allow us to go to a specific page on the epic7x site which contain more information about a character, while info store information about the characters such rarity, class, etc. Note: the exception for "Support Model Brinus" is due to her being an unreleased character but as the model is teased in game, some information about the character is listed on the site but there is not stat associated.
 
-- **Data Organization**: Extracted data is organized into a structured format.
+```
+dict = {}
+for res in result:   
+    icon = res.index("icon")
+    
+    if res[9:icon-3] == "Support Model Brinus":
+        continue 
 
-- **Data Storage**: The script saves the organized data in a Pandas DataFrame and exports it as a CSV file named "e7HeroData.csv."
+    link = res.index('link')
+    rar = res.index("rarity")
+    cla = res.index("class")
+    ele = res.index("element")
+    hor = res.index("horoscope")
+    max = res.index("max")
+    att = res.index("attack")
+    hea = res.index("health")
+    defe =res.index("defense")
+    spd = res.index("speed")
+    link_end = res.index('","stats')
+    dict[f"{res[9:icon-3]}"] = {}
+    dict[f"{res[9:icon-3]}"]["link"] = res[link+7:link_end].replace("\/", "/")
+    dict[f"{res[9:icon-3]}"]["info"] = {}
+    dict[f"{res[9:icon-3]}"]["info"]["rarity"] = res[rar+9]
+    dict[f"{res[9:icon-3]}"]["info"]["class"] = res[cla+8:ele-3]
+    dict[f"{res[9:icon-3]}"]["info"]["horoscope"] = res[hor+12:link-3]  
+    dict[f"{res[9:icon-3]}"]["info"]["attack"] = int(res[att+9:hea-3])
+    dict[f"{res[9:icon-3]}"]["info"]["health"] = int(res[hea+9:defe-3])
+    dict[f"{res[9:icon-3]}"]["info"]["defense"] = int(res[defe+10:spd-3])
+```
+
+- **Additional Statistics**: Individual HTTP requests to character-specific URLs are made to retrieve further character statistics, using the links from the previous dictionary. Now the data we want are in the table row tag. Notice how the position of tr tag we chose depends on the rarity of the units. This is due to the way the leveling system in Epic Seven works so more stat are stored in the website epic7x for lower rarity character and hence we need to go through more table. Additionally, some heroes gain some stat through the process of "awakening" which the site store the increase in bracket so we have to also account for that.
+  
+
+```
+for char in dict:
+    char_link = dict[char]["link"]
+    request_site = urllib.request.Request(char_link, headers={"User-Agent": "Mozilla/5.0"})
+
+    html = urllib.request.urlopen(request_site, context=ctx).read()
+    soup = BeautifulSoup(html, "html.parser")
+
+    tags = soup("tr")
+    i = 0
+
+    if dict[char]["info"]["rarity"] == "5":
+        for tag in tags:
+            if i == 7:
+                stat_table = tag
+            i += 1
+    elif dict[char]["info"]["rarity"] == "4":
+        for tag in tags:
+            if i == 9:
+                stat_table = tag
+            i += 1
+    elif dict[char]["info"]["rarity"] == "3":
+        for tag in tags:
+            if i == 11:
+                stat_table = tag
+            i += 1
+
+    stat = []
+    try:
+        for child in stat_table.children:
+            try:
+                for kid in child.children:
+                    try:
+                        for baby in kid.children:
+                            if f"{baby}"[0] != " ":
+                                try:
+                                    new_baby = int(baby)
+                                except:
+                                    new_baby = int(baby[:-1])
+                                stat.append(new_baby)
+                            else:
+                                start = baby.index("(") +1
+                                try:
+                                    end = baby.index("%")
+                                except:
+                                    end = baby.index(")")
+                                stat[prev] += int(baby[start:end])
+                            prev = len(stat) - 1 
+                    except:
+                        pass
+            except:
+                pass
+    except:
+        pass
+```
+
+- **Data Organization**: Extracted data is organized into a structured format and stored in the previous dictoionary using the key corresponding to the character name. The length of the dictionary is checked so that there are no missing values.
+
+```
+    dict[char]["info"]["crit chance"] = stat[0]
+    dict[char]["info"]["crit damage"] = stat[1]
+    dict[char]["info"]["effectiveness"] = stat[2]
+    dict[char]["info"]["effectiveness resistance"] = stat[3]
+    dict[char]["info"]["speed"] = stat[4]
+
+    if len(dict[char]["info"]) != 11:
+        print(f"Len Mismatch for {char}, {dict[char]['info']}")
+        break
+```
+
+- **Data Storage**: The script saves the organized data in a Pandas DataFrame and exports it as a CSV file named "e7HeroData.csv." 
+
+```
+df = pd.DataFrame(new_dict)
+df.to_csv(f"e7HeroData.csv")
+```
 
 ## Part 2: Data Visualization (e7visualization.py)
 
