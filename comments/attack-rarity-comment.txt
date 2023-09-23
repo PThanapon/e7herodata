@@ -1,1 +1,8 @@
-This is the comment for attack-rarity.
+Attack is strongly correlated to rarity. In general, a 5 stars hero will have higher base attack than 4 star hero which similarly have higher base attack than 3 star hero.
+
+As evidence of this, the means of base attack by rarity are as follow:
+5 stars -> 1084.07
+4 stars -> 956.93
+3 stars -> 915.32
+
+However, there are certainly exception such as Gunther having really high attack (1426) for a 3 star unit due to his passive.
