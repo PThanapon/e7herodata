@@ -1,16 +1,11 @@
 import urllib.request
 from bs4 import BeautifulSoup
-import ssl
 import re
 import pandas as pd
 
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
-
 url = "https://epic7x.com/characters/"
 request_site = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-html = urllib.request.urlopen(request_site, context=ctx).read()
+html = urllib.request.urlopen(request_site).read()
 
 soup = BeautifulSoup(html, "html.parser")
 
