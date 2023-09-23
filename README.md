@@ -1,136 +1,215 @@
-# E7 Hero Data Project Documentation
+# Project: E7 Hero Data
 
-## Table of Contents
+## Introduction
 
-1. [Introduction](#introduction)
-   - [Project Overview](#project-overview)
-   - [Key Features](#key-features)
-   - [Dependencies](#dependencies)
+"E7 Hero Data" is a personal project which involves web scraping, data analysis, visualization, and the creation of an interactive web dashboard. This project is dedicated to extracting, analyzing, and presenting data related to characters from the game Epic Seven. 
 
-2. [Installation](#installation)
-   - [Prerequisites](#prerequisites)
-   - [Setup](#setup)
+For some context, Epic Seven is a turn-based strategy game developed by a Korean game company Smilegate. In a fight, heroes take turns to use their ability to deal damage, heal or provide utility such as buffing allies and debuffing enemies. Each heroes would have a rarity from 1 to 5 Stars; though 1 and 2 stars heroes are rarely use in a fight but rather as fodders to upgrade other heroes so I have omitted them from this project. Together with Class and Horoscope, the base stats of a hero could be determined; with some exceptions such as Summertime Iseria having a 30% atk increase from her Passive skills. This project aims to display the relationships between each of the factors and explores how each stats relate to one anothers.
 
-3. [Usage](#usage)
-   - [1. Data Scraping (e7xscrape.py)](#1-data-scraping-e7xscrapepy)
-   - [2. Data Visualization (e7visualization.py)](#2-data-visualization-e7visualizationpy)
-   - [3. Supplementary Analysis (e7supplementary.py)](#3-supplementary-analysis-e7supplementarypy)
-   - [4. Interactive Dashboard (e7dash.py)](#4-interactive-dashboard-e7dashpy)
+## The Process 
 
-4. [Project Structure](#project-structure)
+## Part 1: Data Extraction (e7xscrape.py)
 
-5. [Contributing](#contributing)
+The project begins with the script `e7xscrape.py`, which serves as the foundation for gathering character data. Here's a summary of its role in the project and its associated code:
 
-6. [License](#license)
+Firstly, I import the necessary modules
+```
+import collections.abc
+collections.Callable = collections.abc.Callable
 
-## 1. Introduction <a name="introduction"></a>
+import urllib.parse, urllib.error, urllib.request
+from bs4 import BeautifulSoup
+import ssl
+import json
+import re
+import pandas as pd
+```
 
-### Project Overview <a name="project-overview"></a>
+- **Web Scraping**: The script uses `urllib` library to access character information from the website "https://epic7x.com/characters/."
 
-The "E7 Hero Data" project is a Python-based initiative aimed at collecting, analyzing, and visualizing character data from the popular mobile game "Epic Seven." This documentation provides an in-depth overview of the project, its features, and how to use it effectively.
+```
+url = "https://epic7x.com/characters/"
+request_site = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+html = urllib.request.urlopen(request_site, context=ctx).read()
+```
 
-### Key Features <a name="key-features"></a>
+- **Data Parsing**: With the help of the `BeautifulSoup` library, I parses the HTML content of the website to locate a specific script tag containing the hero data in JSON format, in this case, it is in the 9th script tags. As the data is stored in the form of Javascripts array with an object for each characters, I sliced the string (obtained from `BeautifulSoup`) into just the array and use Regex (`re`) to match each Javascript object, hence the non-greediness.
+```
+tags = soup("script")
+counter = 0
+for tag in tags:
+    if counter == 8:
+        new_tag = f'{tag}'
+        break
+    counter += 1
 
-- **Data Scraping (e7xscrape.py):** Web scraping script to collect character data from the Epic Seven website.
+cleaned = new_tag[152:106439].rstrip()
+result = re.findall("\{.*?\}", cleaned)
+```
 
-- **Data Visualization (e7visualization.py):** Generates percentile-based line plots to visualize character statistics across different categories.
+![](https://media.discordapp.net/attachments/844184695754457122/1155085988952023050/image.png?width=1666&height=993 "Here's how the arrary look like")
 
-- **Supplementary Analysis (e7supplementary.py):** Produces bar plots displaying average statistics based on character attributes like rarity, class, and horoscope.
+<div align="center"> Here's how the array look like </div>
 
-- **Interactive Dashboard (e7dash.py):** A web application that allows users to explore character data interactively, including image display and comments.
+&nbsp;
 
-### Dependencies <a name="dependencies"></a>
+- **Data Extraction**: Character attributes such as name, link, rarity, class, horoscope, attack, health, defense, and speed are extracted from the string. The names are stored as the keys in the dictionary which itself containes a dictionary with 2 keys; "link" and "info". The link stored will allow us to go to a specific page on the epic7x site which contain more information about a character, while info store information about the characters such rarity, class, etc. Note: the exception for "Support Model Brinus" is due to her being an unreleased character but as the model is teased in game, some information about the character is listed on the site but there is not stat associated.
 
-The project relies on several Python libraries and modules, including:
+```
+dict = {}
+for res in result:   
+    icon = res.index("icon")
+    
+    if res[9:icon-3] == "Support Model Brinus":
+        continue 
 
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/): For web scraping and parsing HTML content.
-- [Pandas](https://pandas.pydata.org/): For data manipulation and storage.
-- [Matplotlib](https://matplotlib.org/): For data visualization.
-- [Seaborn](https://seaborn.pydata.org/): For creating statistical graphics.
-- [Dash](https://dash.plotly.com/): For building the interactive dashboard.
+    link = res.index('link')
+    rar = res.index("rarity")
+    cla = res.index("class")
+    ele = res.index("element")
+    hor = res.index("horoscope")
+    max = res.index("max")
+    att = res.index("attack")
+    hea = res.index("health")
+    defe =res.index("defense")
+    spd = res.index("speed")
+    link_end = res.index('","stats')
+    dict[f"{res[9:icon-3]}"] = {}
+    dict[f"{res[9:icon-3]}"]["link"] = res[link+7:link_end].replace("\/", "/")
+    dict[f"{res[9:icon-3]}"]["info"] = {}
+    dict[f"{res[9:icon-3]}"]["info"]["rarity"] = res[rar+9]
+    dict[f"{res[9:icon-3]}"]["info"]["class"] = res[cla+8:ele-3]
+    dict[f"{res[9:icon-3]}"]["info"]["horoscope"] = res[hor+12:link-3]  
+    dict[f"{res[9:icon-3]}"]["info"]["attack"] = int(res[att+9:hea-3])
+    dict[f"{res[9:icon-3]}"]["info"]["health"] = int(res[hea+9:defe-3])
+    dict[f"{res[9:icon-3]}"]["info"]["defense"] = int(res[defe+10:spd-3])
+```
 
-## 2. Installation <a name="installation"></a>
+- **Additional Statistics**: Individual HTTP requests to character-specific URLs are made to retrieve further character statistics, using the links from the previous dictionary. Now the data we want are in the table row tag. Notice how the position of tr tag we chose depends on the rarity of the units. This is due to the way the leveling system in Epic Seven works so more stat are stored in the website epic7x for lower rarity character and hence we need to go through more table. Additionally, some heroes gain some stat through the process of "awakening" which the site store the increase in bracket so we have to also account for that.
+  
 
-### Prerequisites <a name="prerequisites"></a>
+```
+for char in dict:
+    char_link = dict[char]["link"]
+    request_site = urllib.request.Request(char_link, headers={"User-Agent": "Mozilla/5.0"})
 
-Ensure that you have the following prerequisites installed on your system:
+    html = urllib.request.urlopen(request_site, context=ctx).read()
+    soup = BeautifulSoup(html, "html.parser")
 
-- Python 3.x
-- Pip (Python package manager)
+    tags = soup("tr")
+    i = 0
 
-### Setup <a name="setup"></a>
+    if dict[char]["info"]["rarity"] == "5":
+        for tag in tags:
+            if i == 7:
+                stat_table = tag
+            i += 1
+    elif dict[char]["info"]["rarity"] == "4":
+        for tag in tags:
+            if i == 9:
+                stat_table = tag
+            i += 1
+    elif dict[char]["info"]["rarity"] == "3":
+        for tag in tags:
+            if i == 11:
+                stat_table = tag
+            i += 1
 
-1. Clone the project repository:
-   ```bash
-   git clone https://github.com/yourusername/e7hero-data.git
-   ```
+    stat = []
+    try:
+        for child in stat_table.children:
+            try:
+                for kid in child.children:
+                    try:
+                        for baby in kid.children:
+                            if f"{baby}"[0] != " ":
+                                try:
+                                    new_baby = int(baby)
+                                except:
+                                    new_baby = int(baby[:-1])
+                                stat.append(new_baby)
+                            else:
+                                start = baby.index("(") +1
+                                try:
+                                    end = baby.index("%")
+                                except:
+                                    end = baby.index(")")
+                                stat[prev] += int(baby[start:end])
+                            prev = len(stat) - 1 
+                    except:
+                        pass
+            except:
+                pass
+    except:
+        pass
+```
 
-2. Navigate to the project directory:
-   ```bash
-   cd e7hero-data
-   ```
+- **Data Organization**: Extracted data is organized into a structured format and stored in the previous dictoionary using the key corresponding to the character name. The length of the dictionary is checked so that there are no missing values.
 
-3. Install project dependencies using pip:
-   ```bash
-   pip install -r requirements.txt
-   ```
+```
+    dict[char]["info"]["crit chance"] = stat[0]
+    dict[char]["info"]["crit damage"] = stat[1]
+    dict[char]["info"]["effectiveness"] = stat[2]
+    dict[char]["info"]["effectiveness resistance"] = stat[3]
+    dict[char]["info"]["speed"] = stat[4]
 
-## 3. Usage <a name="usage"></a>
+    if len(dict[char]["info"]) != 11:
+        print(f"Len Mismatch for {char}, {dict[char]['info']}")
+        break
+```
 
-### 1. Data Scraping (e7xscrape.py) <a name="1-data-scraping-e7xscrapepy"></a>
+- **Data Storage**: The script saves the organized data in a Pandas DataFrame and exports it as a CSV file named "e7HeroData.csv." 
 
-- This script extracts character data from the Epic Seven website and stores it in a CSV file named "e7HeroData.csv."
+```
+df = pd.DataFrame(new_dict)
+df.to_csv(f"e7HeroData.csv")
+```
 
-- To run the script, execute the following command:
-  ```bash
-  python e7xscrape.py
-  ```
+## Part 2: Data Visualization (e7visualization.py)
 
-### 2. Data Visualization (e7visualization.py) <a name="2-data-visualization-e7visualizationpy"></a>
+The next step in the project involves the script `e7visualization.py`, which focuses on the visual representation of character data. Here's an overview of its role:
 
-- This script generates percentile-based line plots to visualize character statistics for different categories.
+- **Data Import**: The script imports the character data from the previously generated "e7HeroData.csv" file using the Pandas library.
 
-- To run the script, execute the following command:
-  ```bash
-  python e7visualization.py
-  ```
+- **Data Categorization**: It defines filters and criteria for categorizing characters based on attributes like rarity, class, and horoscope.
 
-### 3. Supplementary Analysis (e7supplementary.py) <a name="3-supplementary-analysis-e7supplementarypy"></a>
+- **Statistics Calculation**: For each filter, the script calculates percentile values for specific character statistics, such as attack, health, defense, etc.
 
-- This script creates bar plots to display average statistics based on character attributes like rarity, class, and horoscope.
+- **Visualization**: The key aspect of this script is the creation of line plots that visualize how character statistics vary across different categories.
 
-- To run the script, execute the following command:
-  ```bash
-  python e7supplementary.py
-  ```
+- **Plot Storage**: The resulting plots are saved as PDF files, each illustrating the variation of a specific statistic (e.g., attack) across different character categories (e.g., rarity).
 
-### 4. Interactive Dashboard (e7dash.py) <a name="4-interactive-dashboard-e7dashpy"></a>
+- **Exploratory Analysis**: The script is designed for exploratory data analysis and helps users understand the distribution of character statistics within the game.
 
-- The interactive dashboard allows users to explore character data, view character images, and read comments.
+## Part 3: Interactive Web Dashboard (e7dash.py)
 
-- To launch the dashboard, run the following command:
-  ```bash
-  python e7dash.py
-  ```
+The final component of the "E7 Hero Data" project is the interactive web dashboard created using the script `e7dash.py`. This part ties everything together:
 
-## 4. Project Structure <a name="project-structure"></a>
+Initially, I wasn't planning to make a dashboard for this project. However, after taking an AI literacy course, I started to wonder if I could use AI to make this project better. So thats exactly what I asked ChatGPT
 
-The project directory is organized as follows:
+```
+Me:
+how should i improve the code above and analyze the data better
 
-- `e7xscrape.py`: Web scraping script for data collection.
-- `e7visualization.py`: Script for generating percentile-based line plots.
-- `e7supplementary.py`: Script for supplementary data analysis.
-- `e7dash.py`: Dash web application for the interactive dashboard.
-- `assets/`: Directory containing assets such as images and CSS.
-- `plots/`: Directory for storing generated plots.
-- `comments/`: Directory for comments associated with the generated plots.
-- `e7HeroData.csv`: CSV file containing character data.
-- `requirements.txt`: List of project dependencies.
+ChatGPT:
+[omitted]
+10. Interactive Dashboard:
+Create an interactive dashboard using tools like Dash (for web-based apps)
+or Jupyter Widgets to allow users to explore the data interactively.
+[omitted]
+```
+However, I have never made a web-based dashboard using python before so I tried to prompt it further for more specific instruction. After hours of fine-tuning, this is the result:
 
-## 5. Contributing <a name="contributing"></a>
+- **Dash Framework**: The script utilizes the Dash framework to create an interactive web interface.
 
-Contributions to this project are welcome. Please follow the standard GitHub fork and pull request workflow. Be sure to adhere to the project's coding and documentation standards.
+- **User Interface**: It sets up a user-friendly interface with elements like dropdown menus, buttons, and images.
 
-## 6. License <a name="license"></a>
+- **Callback Functions**: Dash callbacks are defined to handle user interactions. For example, selecting different filters or statistics updates the displayed character image, comment, and download link.
 
-This project is licensed under the [MIT License](LICENSE).
+- **Smooth Scrolling**: An additional callback allows for smooth scrolling to an "About" section when the "About" button is clicked.
+
+- **Deployment**: The Dash app is deployed, making character data accessible and interactive via a web interface.
+
+## Conclusion
+
+The "E7 Hero Data" project seamlessly combines web scraping, data analysis, visualization, and web development to create a comprehensive platform for exploring and understanding character data from the "E7" game or application. Users can interact with the data through the web dashboard, explore character statistics, and gain valuable insights into the game's characters. This project showcases how data extraction, analysis, and visualization can be transformed into an engaging and informative user 
