@@ -35,7 +35,7 @@ import pandas as pd
 ```
 url = "https://epic7x.com/characters/"
 request_site = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-html = urllib.request.urlopen(request_site, context=ctx).read()
+html = urllib.request.urlopen(request_site).read()
 ```
 
 - **Data Parsing**: With the help of the `BeautifulSoup` library, I parses the HTML content of the website to locate a specific script tag containing the hero data in JSON format, in this case, it is in the 9th script tags. As the data is stored in the form of Javascripts array with an object for each characters, I sliced the string (obtained from `BeautifulSoup`) into just the array and use Regex (`re`) to match each Javascript object, hence the non-greediness.
