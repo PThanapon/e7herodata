@@ -248,4 +248,4 @@ However, I have never made a web-based dashboard using python before so I tried 
 
 ## Conclusion
 
-The "E7 Hero Data" project seamlessly combines web scraping, data analysis, visualization, and web development to create a comprehensive platform for exploring and understanding character data from the "E7" game or application. Users can interact with the data through the web dashboard, explore character statistics, and gain valuable insights into the game's characters. This project showcases how data extraction, analysis, and visualization can be transformed into an engaging and informative user 
+The "E7 Hero Data" project combines web scraping, data analysis, visualization, and web development to create a comprehensive platform for exploring and understanding character data from Epic Seven. Users can interact with the data through the web dashboard, explore character statistics, and gain valuable insights into the game's characters. This project showcases how data extraction, analysis, and visualization can be transformed into an engaging and informative user 
