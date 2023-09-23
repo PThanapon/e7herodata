@@ -1,3 +1,5 @@
+#Dash app code and comments written 100% by ChatGPT
+
 # Import necessary libraries
 import dash
 from dash import dcc
