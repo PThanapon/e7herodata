@@ -167,21 +167,51 @@ df.to_csv(f"e7HeroData.csv")
 
 ## Part 2: Data Visualization (e7visualization.py)
 
-The next step in the project involves the script `e7visualization.py`, which focuses on the visual representation of character data. Here's an overview of its role:
+In this section, we delve into the script `e7visualization.py`, which is dedicated to the visual representation of character data. Here's an outline of its role:
 
-- **Data Import**: The script imports the character data from the previously generated "e7HeroData.csv" file using the Pandas library.
+- **Data Import**: The script leverages the Pandas library to import character data from the "e7HeroData.csv" file.
 
-- **Data Categorization**: It defines filters and criteria for categorizing characters based on attributes like rarity, class, and horoscope.
+- **Data Categorization**: It establishes filters and criteria to categorize characters based on attributes like rarity, class, and horoscope.
 
-- **Statistics Calculation**: For each filter, the script calculates percentile values for specific character statistics, such as attack, health, defense, etc.
+- **Statistics Calculation**: For each filter, the script calculates percentile values for specific character statistics such as attack, health, defense, etc.
 
-- **Visualization**: The key aspect of this script is the creation of line plots that visualize how character statistics vary across different categories.
+- **Visualization**: A key feature of this script is the creation of line plots that visually demonstrate how character statistics vary across different categories.
 
-- **Plot Storage**: The resulting plots are saved as PDF files, each illustrating the variation of a specific statistic (e.g., attack) across different character categories (e.g., rarity).
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://cdn.discordapp.com/attachments/844184695754457122/1155136996247863296/image.png "Speed by class")
 
-- **Exploratory Analysis**: The script is designed for exploratory data analysis and helps users understand the distribution of character statistics within the game.
+<div align="center"> Distribution of Speed by Class </div>
 
-## Part 3: Interactive Web Dashboard (e7dash.py)
+&nbsp;
+
+- **Plot Storage**: The resulting plots are stored as PDF files, each depicting the variation of a specific statistic (e.g., attack) across distinct character categories (e.g., rarity).
+
+- **Exploratory Analysis**: This script is designed for exploratory data analysis, enabling users to comprehend the distribution of character statistics within the game. It utilizes the Matplotlib library for visualization.
+
+## Part 3: Additional Data Analysis (e7supplementary.py)
+
+This section introduces the script `e7supplementary.py`, which enhances the project with additional data analysis. Here's an overview of its role, distinguishing it from Part 2:
+
+- **Data Import**: The script imports character data from the "e7HeroData.csv" file using the Pandas library.
+
+- **Mean Calculation**: It computes the mean values for specific character statistics, including attack, health, defense, crit chance, crit damage, effectiveness, effectiveness resistance, and speed.
+
+- **Data Grouping**: The script groups the data based on filter criteria such as rarity, class, and horoscope.
+
+- **Visualization**: For each statistic, it generates a series of bar plots, one for each filter, to visualize the average value of that statistic across various categories.
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ![](https://media.discordapp.net/attachments/844184695754457122/1155135429071343737/image.png?width=661&height=993 "Attack Averages")
+
+<div align="center"> Mean of Attack based on Rarity, Class and Horoscope </div>
+
+&nbsp;
+
+- **Plot Storage**: The resulting plots are saved as image files, each illustrating the average value of a specific statistic by category.
+
+Unlike Part 2, which utilizes Matplotlib for visualization, Part 3 employs the Seaborn library to create these informative visualizations.
+
+Together, these sections offer a comprehensive approach to character data analysis, allowing users to explore character statistics from different perspectives and gain valuable insights into the game's characters.
+
+## Part 4: Interactive Web Dashboard (e7dash.py)
 
 The final component of the "E7 Hero Data" project is the interactive web dashboard created using the script `e7dash.py`. This part ties everything together:
 
@@ -199,6 +229,12 @@ or Jupyter Widgets to allow users to explore the data interactively.
 [omitted]
 ```
 However, I have never made a web-based dashboard using python before so I tried to prompt it further for more specific instruction. After hours of fine-tuning, this is the result:
+
+![](https://cdn.discordapp.com/attachments/844184695754457122/1155135109524103268/image.png "E7 Hero Data Dashboard")
+
+<div align="center"> E7 Hero Data Dashboard </div>
+
+&nbsp;
 
 - **Dash Framework**: The script utilizes the Dash framework to create an interactive web interface.
 
