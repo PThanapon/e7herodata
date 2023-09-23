@@ -1,7 +1,4 @@
-import collections.abc
-collections.Callable = collections.abc.Callable
-
-import urllib.parse, urllib.request
+import urllib.request
 from bs4 import BeautifulSoup
 import ssl
 import re
