@@ -1,3 +1,13 @@
+#############################################################################################
+#                                                                                           #     
+#                                      Disclaimer                                           #
+#                The entirety of the code below is written by ChatGPT                       #
+#      Though it definitely takes many hours of prompting it to get the feature i want      #
+#                                                                                           #
+#############################################################################################
+
+
+
 import dash
 from dash import dcc
 from dash import html
