@@ -1,0 +1,13 @@
+Negative Correlations:
+
+Attack vs. Health and Defense: Characters with higher Attack tend to have slightly lower Health (-0.1554) and moderately lower Defense (-0.4165).
+Health vs. Critical Hit Chance and Speed: Characters with higher Health tend to have a lower chance of landing critical hits (-0.2618) and are slower (-0.2619).
+Critical Hit Chance vs. Defense and Effectiveness Resistance: Characters with a higher chance of landing critical hits tend to have lower Defense (-0.4776) and lower Effectiveness Resistance (-0.3204).
+Defense vs. Speed: Characters with higher Defense tend to be slower (-0.5589).
+
+Positive Correlations:
+
+Attack vs. Critical Hit Chance and Speed: Characters with higher Attack tend to have a higher chance of landing critical hits (0.2819) and are faster (0.3417).
+Defense vs. Effectiveness Resistance: Characters with higher Defense tend to have higher Effectiveness Resistance (0.3594).
+Critical Hit Chance vs. Critical Damage and Speed: Characters with a higher chance of landing critical hits also tend to deal higher critical damage (0.2484) and be faster (0.3160).
+Speed vs. Effectiveness: Faster characters tend to have slightly higher Effectiveness (0.1968).
