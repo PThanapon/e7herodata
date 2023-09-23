@@ -4,7 +4,6 @@ collections.Callable = collections.abc.Callable
 import urllib.parse, urllib.error, urllib.request
 from bs4 import BeautifulSoup
 import ssl
-import json
 import re
 import pandas as pd
 
