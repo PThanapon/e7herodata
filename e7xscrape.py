@@ -52,7 +52,7 @@ for char in dict:
     char_link = dict[char]["link"]
     request_site = urllib.request.Request(char_link, headers={"User-Agent": "Mozilla/5.0"})
 
-    html = urllib.request.urlopen(request_site, context=ctx).read()
+    html = urllib.request.urlopen(request_site).read()
     soup = BeautifulSoup(html, "html.parser")
 
     tags = soup("tr")
