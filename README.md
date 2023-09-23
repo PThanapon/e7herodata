@@ -1,20 +1,10 @@
-<h2>Welcome to E7 Hero Data!<h2/>
-  
-A project where I collect and analysed the base stat of heroes from Epic Seven.
-
-<h3> <ins>Background Information</ins> <h3/>
-
-<p>Epic Seven is a mobile turn-based strategy role playing game.<p/>
-
-<p>In Epic Seven, each character is categorized based on their raity, class and horoscope and depending in the combination of the 3, they will have a unique statline specific to the combination<p/>
-
-<h3> <ins> What does ChatGPT says? </ins></h3>
-
 # Project: E7 Hero Data
 
 ## Introduction
 
-The "E7 Hero Data" project is a comprehensive undertaking that involves web scraping, data analysis, visualization, and the creation of an interactive web dashboard. This project is dedicated to extracting, analyzing, and presenting data related to characters from a popular game or application, referred to as "E7."
+The "E7 Hero Data" is a personal project which involves web scraping, data analysis, visualization, and the creation of an interactive web dashboard. This project is dedicated to extracting, analyzing, and presenting data related to characters from the game Epic Seven.
+
+For some context, Epic Seven is a turn-based strategy game developed by a Korean game company Smilegate. In a fight, heroes take turns to use their ability to deal damage, heal or provide utility such as buffing allies and debuffing enemies. 
 
 ## Part 1: Data Extraction (e7xscrape.py)
 
