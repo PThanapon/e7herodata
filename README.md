@@ -270,6 +270,12 @@ One of the unexpected challenges arose from the fact that character data for 4-s
 
 When I incorporated the Seaborn library for data visualization, I encountered a recurring FutureWarning message. This warning was related to certain aspects of data visualization in Seaborn. To resolve this issue:
 
+![](https://media.discordapp.net/attachments/844184695754457122/1155193468340142150/image.png?width=1920&height=740 "FutureWarning")
+
+<div align="center"> FutureWarning </div>
+
+&nbsp;
+
 - **StackOverflow Research**: I actively sought solutions by searching through community forums like Stack Overflow. It was during this research that I learned about the FutureWarning and its implications.
 
 - **Suppressing Warnings**: To prevent the FutureWarning messages from cluttering the output, I implemented code to suppress warnings specifically related to the Seaborn library. This allowed me to maintain a clean and informative environment for data visualization.
