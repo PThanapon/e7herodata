@@ -246,6 +246,31 @@ However, I have never made a web-based dashboard using python before so I tried 
 
 - **Deployment**: The Dash app is deployed locally through localhost, making character data accessible and interactive via a web interface. (I have tried deploying with Heroku but it will cost $7 per month so I took it down)
 
+
+## Part 5: Challenges Faced
+
+Throughout the development of the "E7 Hero Data" project, I encountered several challenges that required problem-solving and troubleshooting. Here, I outline two notable challenges and how I addressed them:
+
+### Challenge 1: Handling Different Data Structures for 4-Star and 3-Star Heroes
+
+One of the unexpected challenges arose from the fact that character data for 4-star and 3-star heroes on the Epic Seven website was stored differently compared to 5-star heroes. This difference in data structure led to missing stat values in the initial data extraction process. To overcome this challenge:
+
+- **Troubleshooting**: I began by carefully inspecting the content of the `<tr>` (table row) tags on the web pages where hero statistics were stored. This involved printing multiple equal signs (`======`) in a line to distinguish between each tag and understand the structure of the data.
+
+- **Selective Data Retrieval**: After identifying the variations in data storage, I adapted the code to selectively retrieve data based on the rarity of the heroes. For example, I used different indices for 4-star and 3-star heroes, ensuring that the correct data was extracted for each rarity level.
+
+- **Data Validation**: To ensure data integrity, I implemented validation checks to confirm that the extracted data matched the expected structure. This involved verifying that all required statistics were present and correctly stored in the dictionary.
+
+### Challenge 2: Dealing with FutureWarning in Seaborn Library
+
+When I incorporated the Seaborn library for data visualization, I encountered a recurring FutureWarning message. This warning was related to certain aspects of data visualization in Seaborn. To resolve this issue:
+
+- **StackOverflow Research**: I actively sought solutions by searching through community forums like Stack Overflow. It was during this research that I learned about the FutureWarning and its implications.
+
+- **Suppressing Warnings**: To prevent the FutureWarning messages from cluttering the output, I implemented code to suppress warnings specifically related to the Seaborn library. This allowed me to maintain a clean and informative environment for data visualization.
+
+By addressing these challenges, I not only enhanced the robustness of the project but also gained valuable problem-solving skills that are essential in the field of data analysis and web scraping.
+
 ## Conclusion
 
 The "E7 Hero Data" project combines web scraping, data analysis, visualization, and web development to create a comprehensive platform for exploring and understanding character data from Epic Seven. Users can interact with the data through the web dashboard, explore character statistics, and gain valuable insights into the game's characters. This project showcases how data extraction, analysis, and visualization can be transformed into an engaging and informative user 
