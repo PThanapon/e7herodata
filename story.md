@@ -56,4 +56,4 @@ In the final act of our journey, "e7dash.py" emerges as an enchanting web dashbo
 
 ## Conclusion: A Tale of Skills Obtained and Challenges Conquered
 
-The "E7 Hero Data" project embarks on a quest that transcends boundaries, showcasing the mastery of web scraping, data analysis, visualization, and web development. It tells the tale of skills honed, challenges conquered, and knowledge obtained in the pursuit of uncovering the secrets of "E7" characters. As the journey unfolds, it paints a vivid picture of how diverse skills can converge to create an engaging and informative user experience, unveiling the mesmerizing world of epic characters.
+The "E7 Hero Data" project embarks on a quest that transcends boundaries, showcasing the mastery of web scraping, data analysis, visualization, and web development. It tells the tale of skills honed, challenges conquered, and knowledge obtained in the pursuit of uncovering the secrets of the Epic Seven characters. As the journey unfolds, it paints a vivid picture of how diverse skills can converge to create an engaging and informative user experience, unveiling the mesmerizing world of epic characters.
