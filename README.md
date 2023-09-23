@@ -244,7 +244,7 @@ However, I have never made a web-based dashboard using python before so I tried 
 
 - **Smooth Scrolling**: An additional callback allows for smooth scrolling to an "About" section when the "About" button is clicked.
 
-- **Deployment**: The Dash app is deployed, making character data accessible and interactive via a web interface.
+- **Deployment**: The Dash app is deployed locally through localhost, making character data accessible and interactive via a web interface. (I have tried deploying with Heroku but it will cost $7 per month so I took it down)
 
 ## Conclusion
 
