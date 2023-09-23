@@ -185,6 +185,21 @@ The next step in the project involves the script `e7visualization.py`, which foc
 
 The final component of the "E7 Hero Data" project is the interactive web dashboard created using the script `e7dash.py`. This part ties everything together:
 
+Initially, I wasn't planning to make a dashboard for this project. However, after taking an AI literacy course, I started to wonder if I could use AI to make this project better. So thats exactly what I asked ChatGPT
+
+```
+Me:
+how should i improve the code above and analyze the data better
+
+ChatGPT:
+[omitted]
+10. Interactive Dashboard:
+Create an interactive dashboard using tools like Dash (for web-based apps)
+or Jupyter Widgets to allow users to explore the data interactively.
+[omitted]
+```
+However, I have never made a web-based dashboard using python before so I tried to prompt it further for more specific instruction. After hours of fine-tuning, this is the result:
+
 - **Dash Framework**: The script utilizes the Dash framework to create an interactive web interface.
 
 - **User Interface**: It sets up a user-friendly interface with elements like dropdown menus, buttons, and images.
