@@ -6,6 +6,9 @@
 
 For some context, Epic Seven is a turn-based strategy game developed by a Korean game company Smilegate. In a fight, heroes take turns to use their ability to deal damage, heal or provide utility such as buffing allies and debuffing enemies. Each heroes would have a rarity from 1 to 5 Stars; though 1 and 2 stars heroes are rarely use in a fight but rather as fodders to upgrade other heroes so I have omitted them from this project. Together with Class and Horoscope, the base stats of a hero could be determined; with some exceptions such as Summertime Iseria having a 30% atk increase from her Passive skills. This project aims to display the relationships between each of the factors and explores how each stats relate to one anothers.
 
+##Key Findings
+#WORK IN PROGRESS
+
 ## The Process 
 
 ## Part 1: Data Extraction (e7xscrape.py)
