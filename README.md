@@ -39,6 +39,7 @@ html = urllib.request.urlopen(request_site).read()
 ```
 
 - **Data Parsing**: With the help of the `BeautifulSoup` library, I parses the HTML content of the website to locate a specific script tag containing the hero data in JSON format, in this case, it is in the 9th script tags. As the data is stored in the form of Javascripts array with an object for each characters, I sliced the string (obtained from `BeautifulSoup`) into just the array and use Regex (`re`) to match each Javascript object, hence the non-greediness.
+
 ```
 tags = soup("script")
 counter = 0
@@ -252,9 +253,6 @@ However, I have never made a web-based dashboard using python before so I tried 
 <div align="center"> Dropdown Menu for stat options </div>
 
 &nbsp;  
-
-
-- **Smooth Scrolling**: An additional callback allows for smooth scrolling to an "About" section when the "About" button is clicked.
 
 - **Deployment**: The Dash app is deployed locally through localhost, making character data accessible and interactive via a web interface. (I have tried deploying with Heroku but it will cost $7 per month so I took it down)
 
