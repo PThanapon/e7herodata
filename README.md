@@ -244,7 +244,7 @@ However, I have never made a web-based dashboard using python before so I tried 
 
 - **Dash Framework**: The script utilizes the Dash framework to create an interactive web interface.
 
-- **User Interface**: It sets up a user-friendly interface with elements like dropdown menus, buttons, and images.
+- **User Interface**: It sets up a user-friendly interface with elements like dropdown menus to select the filters, visualizations, comments for the plots and a button to download the shown image.
 
 - **Callback Functions**: Dash callbacks are defined to handle user interactions. For example, selecting different filters or statistics updates the displayed character image, comment, and download link.
 
