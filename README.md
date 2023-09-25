@@ -247,6 +247,13 @@ However, I have never made a web-based dashboard using python before so I tried 
 
 - **Callback Functions**: Dash callbacks are defined to handle user interactions. For example, selecting different filters or statistics updates the displayed character image, comment, and download link.
 
+![](https://media.discordapp.net/attachments/844184695754457122/1155921908450213898/image.png?width=1075&height=572 "E7 Hero Data Dashboard")
+
+<div align="center"> Dropdown Menu for stat options </div>
+
+&nbsp;  
+
+
 - **Smooth Scrolling**: An additional callback allows for smooth scrolling to an "About" section when the "About" button is clicked.
 
 - **Deployment**: The Dash app is deployed locally through localhost, making character data accessible and interactive via a web interface. (I have tried deploying with Heroku but it will cost $7 per month so I took it down)
