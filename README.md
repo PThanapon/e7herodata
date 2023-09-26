@@ -283,7 +283,7 @@ When I incorporated the Seaborn library for data visualization, I encountered a 
 
 - **StackOverflow Research**: I actively sought solutions by searching through community forums like Stack Overflow. It was during this research that I learned about the FutureWarning and its implications.
 
-- **Suppressing Warnings**: To prevent the FutureWarning messages from cluttering the output, I implemented code to suppress warnings specifically related to the Seaborn library. This allowed me to maintain a clean and informative environment for data visualization.
+- **Suppressing Warnings**: To prevent the FutureWarning messages from cluttering the output, I implemented code to suppress warnings using the Warning module. This allowed me to maintain a clean and informative environment for data visualization.
 
 By addressing these challenges, I not only enhanced the robustness of the project but also gained valuable problem-solving skills that are essential in the field of data analysis and web scraping.
 
