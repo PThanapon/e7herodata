@@ -56,9 +56,7 @@ For some context, Epic Seven is a turn-based strategy game developed by a Korean
 4. Correlation and Conclusion
 - It should be quite clear that in Epic Seven, there are no class, horoscope and rarity which are the best for everything. In order for the game to be balanced, there should always be a tradeoff between one stat and another. To confirm the general trend and relationship between each stat, we can use plot a Correlation Matrix using Matplotlib.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://media.discordapp.net/attachments/844184695754457122/1156298448006549665/correlation.png?ex=65147658&is=651324d8&hm=a479efd546059b220b8e67e5aebf1399efacb2047b137c804f72af6c55033a90&=&width=884&height=783 "avg by horoscope")
-
-<div align="center"> Correlation Matrix </div>
+![](https://media.discordapp.net/attachments/844184695754457122/1156298448006549665/correlation.png?ex=65147658&is=651324d8&hm=a479efd546059b220b8e67e5aebf1399efacb2047b137c804f72af6c55033a90&=&width=884&height=783 "avg by horoscope")
 
 &nbsp;
 
