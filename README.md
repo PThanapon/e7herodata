@@ -14,7 +14,26 @@ For some context, Epic Seven is a turn-based strategy game developed by a Korean
 
 ## Key Findings
 
-**WORK IN PROGRESS**
+1. While flat stats (Attack, Heath, Defense and Speed) and effectiveness generally increase with increasing rarity, other percentage stat (Crit Chance, Crit Damage, Eff Res) does not follow this trend. Notably, Crit Chance has the opposite relationship.
+
+![](https://media.discordapp.net/attachments/844184695754457122/1156253852660666559/image.png?ex=65144cd0&is=6512fb50&hm=eef5ad0eac1a8cba557d2998eb0d6e4de2b7bc6b59d339dd8b3ea9dfe112ee68&=&width=1920&height=971 "flat average")
+
+<div align="center"> Flat Stat average based on rarity </div>
+
+![](https://media.discordapp.net/attachments/844184695754457122/1156254543739359243/image.png?ex=65144d75&is=6512fbf5&hm=b11581adf81c6d625d88ab506e7a5476e80e6039cba76e8e876042375fb3272b&=&width=1920&height=971 "cc avg")
+
+<div align="center"> Average of Crit Chance based on rarity </div>
+
+&nbsp;
+
+2. Different class have their own "specialities"
+- Mage has high Attack, Defense, Effectiveness, medium Speed, Crit Chance, Eff Res and low Health.
+- Thief has high Attack, Crit Chance, Speed, medium Health, low Defense, Effectiveness and low Eff Res
+= Ranger has high Attack, Speed, Effectiveness, medium Health, Defense, Crit Chance and low Eff Res
+- Warrior has high Attack, medium Health, Defense, Speed, Crit Chance and low Effectiveness and Eff Res 
+- Knight has high Health, Defense, medium Attack, Crit Chance, Effectiveness, Eff Res and low Speed
+- Soul Weaver has High Defense and Eff Res, medium Speed Effectiveness and low Attack, Health and Crit Chance
+- Crit Damage is pretty constant for all class.
 
 ## The Process 
 
@@ -153,15 +172,15 @@ for char in dict:
 - **Data Organization**: Extracted data is organized into a structured format and stored in the previous dictoionary using the key corresponding to the character name. The length of the dictionary is checked so that there are no missing values.
 
 ```
-    dict[char]["info"]["crit chance"] = stat[0]
-    dict[char]["info"]["crit damage"] = stat[1]
-    dict[char]["info"]["effectiveness"] = stat[2]
-    dict[char]["info"]["effectiveness resistance"] = stat[3]
-    dict[char]["info"]["speed"] = stat[4]
+dict[char]["info"]["crit chance"] = stat[0]
+dict[char]["info"]["crit damage"] = stat[1]
+dict[char]["info"]["effectiveness"] = stat[2]
+dict[char]["info"]["effectiveness resistance"] = stat[3]
+dict[char]["info"]["speed"] = stat[4]
 
-    if len(dict[char]["info"]) != 11:
-        print(f"Len Mismatch for {char}, {dict[char]['info']}")
-        break
+if len(dict[char]["info"]) != 11:
+    print(f"Len Mismatch for {char}, {dict[char]['info']}")
+    break
 ```
 
 - **Data Storage**: The script saves the organized data in a Pandas DataFrame and exports it as a CSV file named "e7HeroData.csv." 
@@ -176,12 +195,53 @@ df.to_csv(f"e7HeroData.csv")
 In this section, we delve into the script `e7visualization.py`, which is dedicated to the visual representation of character data. Here's an outline of its role:
 
 - **Data Import**: The script leverages the Pandas library to import character data from the "e7HeroData.csv" file.
+```
+df = pd.read_csv('e7herodata.csv')
+```
 
-- **Data Categorization**: It establishes filters and criteria to categorize characters based on attributes like rarity, class, and horoscope.
+- **Data Categorization**: It establishes filters to categorize characters based on the attributes: rarity, class, and horoscope.
+```
+filters = {
+    "rarity": [3, 4, 5],    
+    "class": ["Warrior", "Knight", "Soul Weaver", "Ranger", "Mage", "Thief"],
+    "horoscope": ["Aries", "Gemini", "Leo", "Sagittarius", "Libra", "Scorpio",
+        "Capricorn", "Cancer", "Aquarius", "Taurus", "Pisces", "Virgo"]
+}
+```
 
-- **Statistics Calculation**: For each filter, the script calculates percentile values for specific character statistics such as attack, health, defense, etc.
+- **Statistics Calculation**: Percentile values for specific character statistics such as attack, health, defense, etc based on the filters are calculated
+```
+perc = []
+for v in range(len(temp)):
+    perc.append(v * 100 / (len(temp) - 1))
+```
 
 - **Visualization**: A key feature of this script is the creation of line plots that visually demonstrate how character statistics vary across different categories.
+  - We iterate through each filter and stat
+```
+for filt in filters:
+    for stat in stats:
+```
+  - Which we can then create the visualization using the value of filt and stat. First we append the dictionary stats with the sorted value of the current stat based on the current filter. Then we go through the filter; for eg. filter rarity will go through rarity = 3, 4 then 5, and plot the graph together with the calculated percentile earlier as the x-axis.
+```
+stats[stat].append(df.sort_values(by=[stat]))
+
+for i, fil in enumerate(filters[filt]):
+temp = stats[stat][0][stats[stat][0][filt] == fil]
+
+    perc = []
+    for v in range(len(temp)):
+        perc.append(v * 100 / (len(temp) - 1))
+
+    stats[stat].append(temp)
+    plt.plot(perc, stats[stat][i + 1][stat].values, colour[i], label=filters[filt][i])
+
+plt.title(f"{stat} by {filt}")
+plt.xlabel("percentile")
+plt.ylabel(stat)
+plt.legend()
+```
+
 
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://cdn.discordapp.com/attachments/844184695754457122/1155136996247863296/image.png "Speed by class")
 
@@ -189,21 +249,49 @@ In this section, we delve into the script `e7visualization.py`, which is dedicat
 
 &nbsp;
 
-- **Plot Storage**: The resulting plots are stored as PDF files, each depicting the variation of a specific statistic (e.g., attack) across distinct character categories (e.g., rarity).
+- **Plot Storage**: The resulting plots are stored as png files, each depicting the variation of a specific statistic (e.g., attack) across distinct character categories (e.g., rarity) with the convention stat-filter.png
+```
+plt.savefig(f"{stat}-{filt}.png")
+plt.clf()
+```
+![](https://media.discordapp.net/attachments/844184695754457122/1156248987435802765/image.png?ex=65144848&is=6512f6c8&hm=b2d83d5340ef2be5437bbf44ccd64dcd98a6ea766f1c78a0a5b7d5c1c225118e&=&width=1920&height=636 "E7 Hero Data Graphs")
 
-- **Exploratory Analysis**: This script is designed for exploratory data analysis, enabling users to comprehend the distribution of character statistics within the game. It utilizes the Matplotlib library for visualization.
+<div align="center"> Here's the 24 graphs plotted with Matplotlib </div>
+
+&nbsp;
 
 ## Part 3: Additional Data Analysis ( [e7supplementary.py](https://github.com/pthanapon/e7herodata/blob/main/e7supplementary.py) )
 
-This section introduces the script `e7supplementary.py`, which enhances the project with additional data analysis. Here's an overview of its role, distinguishing it from Part 2:
+This section introduces the script `e7supplementary.py`, which enhances the project with additional data analysis. Here's an overview of its role:
 
-- **Data Import**: The script imports character data from the "e7HeroData.csv" file using the Pandas library.
+- **Data Import**: The script imports character data from the "e7HeroData.csv" file using the Pandas library similarly to part 2.
 
-- **Mean Calculation**: It computes the mean values for specific character statistics, including attack, health, defense, crit chance, crit damage, effectiveness, effectiveness resistance, and speed.
+- **Mean Calculation**: It computes the mean values for specific character statistics.
+```
+mean_df = df.groupby(fil)[stat].mean().reset_index()
+```
 
 - **Data Grouping**: The script groups the data based on filter criteria such as rarity, class, and horoscope.
+```
+sorted_df = mean_df.sort_values(by=stat)
+```
 
-- **Visualization**: For each statistic, it generates a series of bar plots, one for each filter, to visualize the average value of that statistic across various categories.
+- **Visualization**: For each stat, it generates a series of bar plots, one for each filter, to visualize the average value of that statistic across various categories together in a single plot.
+```
+for stat in stats:
+    fig, axes = plt.subplots(len(filter), figsize=(8, 12))
+    
+    for i, fil in enumerate(filter):
+        mean_df = df.groupby(fil)[stat].mean().reset_index()
+
+        sorted_df = mean_df.sort_values(by=stat)
+
+        sns.barplot(data=sorted_df, x=fil, y=stat, ax=axes[i])
+
+        axes[i].set_title(f"Average {stat} by {fil}")
+        axes[i].set_xlabel(fil)
+        axes[i].set_ylabel(f"Average {stat}")
+```
 
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ![](https://media.discordapp.net/attachments/844184695754457122/1155135429071343737/image.png?width=661&height=993 "Attack Averages")
 
@@ -213,9 +301,8 @@ This section introduces the script `e7supplementary.py`, which enhances the proj
 
 - **Plot Storage**: The resulting plots are saved as image files, each illustrating the average value of a specific statistic by category.
 
-Unlike Part 2, which utilizes Matplotlib for visualization, Part 3 employs the Seaborn library to create these informative visualizations.
-
-Together, these sections offer a comprehensive approach to character data analysis, allowing users to explore character statistics from different perspectives and gain valuable insights into the game's characters.
+While Part 2 use Matplotlib for visualization, Part 3 employs the Seaborn library to create these informative visualizations.
+Together, these visualizations allowing me to explore character statistics from different perspectives and gain valuable insights into the game's characters.
 
 ## Part 4: Interactive Web Dashboard ( [e7dash.py](https://github.com/pthanapon/e7herodata/blob/main/e7dash.py) )
 
