@@ -20,6 +20,8 @@ For some context, Epic Seven is a turn-based strategy game developed by a Korean
 
 <div align="center"> Flat Stat average based on rarity </div>
 
+&nbsp;
+
 ![](https://media.discordapp.net/attachments/844184695754457122/1156254543739359243/image.png?ex=65144d75&is=6512fbf5&hm=b11581adf81c6d625d88ab506e7a5476e80e6039cba76e8e876042375fb3272b&=&width=1920&height=971 "cc avg")
 
 <div align="center"> Average of Crit Chance based on rarity </div>
@@ -34,6 +36,14 @@ For some context, Epic Seven is a turn-based strategy game developed by a Korean
 - Knight has high Health, Defense, medium Attack, Crit Chance, Effectiveness, Eff Res and low Speed
 - Soul Weaver has High Defense and Eff Res, medium Speed Effectiveness and low Attack, Health and Crit Chance
 - Crit Damage is pretty constant for all class.
+
+![](https://media.discordapp.net/attachments/844184695754457122/1156266090960269342/image.png?ex=65145836&is=651306b6&hm=3ba43f02292ac681519f4fbeddf1efbe11240a1a5579ed90bb2f677b3eda0b11&=&width=1920&height=338 "avg by class")
+
+<div align="center"> Average of stats by class </div>
+
+&nbsp;
+
+3. 
 
 ## The Process 
 
