@@ -62,17 +62,17 @@ For some context, Epic Seven is a turn-based strategy game developed by a Korean
 
 - **Negative Correlations:**
 
-Attack vs. Health and Defense: Characters with higher Attack tend to have slightly lower Health (-0.1554) and moderately lower Defense (-0.4165).
-Health vs. Crit Chance and Speed: Characters with higher Health tend to have a lower chance of landing critical hits (-0.2618) and are slower (-0.2619).
-Crit Chance vs. Defense and Effectiveness Resistance: Characters with a higher critical chance tend to have lower Defense (-0.4776) and lower Effectiveness Resistance (-0.3204).
-Defense vs. Speed: Characters with higher Defense tend to be slower (-0.5589).
+    - Attack vs. Health and Defense: Characters with higher Attack tend to have slightly lower Health (-0.1554) and moderately lower Defense (-0.4165).
+    - Health vs. Crit Chance and Speed: Characters with higher Health tend to have a lower chance of landing critical hits (-0.2618) and are slower (-0.2619).
+    - Crit Chance vs. Defense and Effectiveness Resistance: Characters with a higher critical chance tend to have lower Defense (-0.4776) and lower Effectiveness Resistance (-0.3204).
+    - Defense vs. Speed: Characters with higher Defense tend to be slower (-0.5589).
 
 - **Positive Correlations:**
 
-Attack vs. Crit Chance and Speed: Characters with higher Attack tend to have a higher chance of landing critical hits (0.2819) and are faster (0.3417).
-Defense vs. Effectiveness Resistance: Characters with higher Defense tend to have higher Effectiveness Resistance (0.3594).
-Crit Chance vs. Critical Damage and Speed: Characters with a higher crit chance also tend to have higher critical damage (0.2484) and be faster (0.3160).
-Speed vs. Effectiveness: Characters with higher speed tend to have slightly higher Effectiveness (0.1968).
+    - Attack vs. Crit Chance and Speed: Characters with higher Attack tend to have a higher chance of landing critical hits (0.2819) and are faster (0.3417).
+    - Defense vs. Effectiveness Resistance: Characters with higher Defense tend to have higher Effectiveness Resistance (0.3594).
+    - Crit Chance vs. Critical Damage and Speed: Characters with a higher crit chance also tend to have higher critical damage (0.2484) and be faster (0.3160).
+    - Speed vs. Effectiveness: Characters with higher speed tend to have slightly higher Effectiveness (0.1968).
 
 ## The Process 
 
