@@ -380,7 +380,7 @@ However, I have never made a web-based dashboard using python before so I tried 
 
 &nbsp;  
 
-- **Deployment**: The Dash app is deployed locally through localhost, making character data accessible and interactive via a web interface. (I have tried deploying with Heroku but it will cost $7 per month so I took it down)
+- **Deployment**: The Dash app is deployed locally through localhost and Heroku, making character data accessible and interactive via a web interface. Took Heroku app down due to monthly cost.
 
 
 ## Part 5: Challenges Faced
@@ -415,4 +415,4 @@ By addressing these challenges, I not only enhanced the robustness of the projec
 
 ## Conclusion
 
-The "E7 Hero Data" project combines web scraping, data analysis, visualization, and web development to create a comprehensive platform for exploring and understanding character data from Epic Seven. Users can interact with the data through the web dashboard, explore character statistics, and gain valuable insights into the game's characters. (Once I deploy the web-app anyways). This project showcases how data extraction, analysis, and visualization can be transformed into an engaging and informative dashboard.
+The "E7 Hero Data" project combines web scraping, data analysis, visualization, and web development to create a comprehensive platform for exploring and understanding character data from Epic Seven. Users can interact with the data through the web dashboard, explore character statistics, and gain valuable insights into the game's characters. This project showcases how data extraction, analysis, and visualization can be transformed into an engaging and informative dashboard.
